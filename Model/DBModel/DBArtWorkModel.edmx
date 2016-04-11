@@ -1,0 +1,2657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBArtWorkRC6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_1_User">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="PrivilegeId" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="UserFirstName" Type="varchar" MaxLength="100" />
+          <Property Name="UserLastName" Type="varchar" MaxLength="100" />
+          <Property Name="UserMiddleName" Type="varchar" MaxLength="100" />
+          <Property Name="UserPhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="UserMobilePhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="AddedDate" Type="datetime" Nullable="false" />
+          <Property Name="ActivatedDate" Type="datetime" />
+          <Property Name="ActivatedLink" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastVisitDate" Type="datetime" />
+          <Property Name="AvatarPath" Type="varchar" MaxLength="150" />
+          <Property Name="Birthdate" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_10_ChemicalElement">
+          <Key>
+            <PropertyRef Name="ChemicalElementId" />
+          </Key>
+          <Property Name="ChemicalElementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrystalStructureId" Type="int" Nullable="false" />
+          <Property Name="ChemicalElementName" Type="varchar" MaxLength="100" />
+          <Property Name="ChemicalElementDescription" Type="varchar" MaxLength="400" />
+          <Property Name="ChemicalElementAtomicNumber" Type="int" />
+          <Property Name="ChemicalElementAtomicWeight" Type="float" />
+          <Property Name="ChemicalElementCore" Type="int" />
+          <Property Name="ChemicalElementIons" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_11_AuthorPictures">
+          <Key>
+            <PropertyRef Name="AuthorPicturesId" />
+          </Key>
+          <Property Name="AuthorPicturesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GeografyPlaceId" Type="int" Nullable="false" />
+          <Property Name="HistoryPeriodId" Type="int" Nullable="false" />
+          <Property Name="AuthorTypeId" Type="int" Nullable="false" />
+          <Property Name="AuthorFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorLastName" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorMiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorDate_of_birth" Type="datetime" />
+          <Property Name="AuthorOtherDates" Type="datetime" />
+          <Property Name="AuthorBiography" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="tbl_12_GeografyPlace">
+          <Key>
+            <PropertyRef Name="GeografyPlaceId" />
+          </Key>
+          <Property Name="GeografyPlaceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="GeografyPlaceCity" Type="varchar" MaxLength="100" />
+          <Property Name="Administrative_District_1" Type="varchar" MaxLength="200" />
+          <Property Name="Administrative_District_2" Type="varchar" MaxLength="200" />
+          <Property Name="Administrative_District_3" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_13_HistoryPeriod">
+          <Key>
+            <PropertyRef Name="HistoryPeriodId" />
+          </Key>
+          <Property Name="HistoryPeriodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HistoryPeriodName" Type="varchar" MaxLength="100" />
+          <Property Name="HistoryPeriodIdDescription" Type="varchar" MaxLength="1000" />
+          <Property Name="HistoryPeriodIdDates" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_14_ArtWork">
+          <Key>
+            <PropertyRef Name="ArtWorkId" />
+          </Key>
+          <Property Name="ArtWorkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AuthorPicturesId" Type="int" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="TechnicsId" Type="int" Nullable="false" />
+          <Property Name="ArtWorkName" Type="varchar" MaxLength="100" />
+          <Property Name="ArtWorkOriginalName" Type="varchar" MaxLength="100" />
+          <Property Name="ArtWorkLocation" Type="varchar" MaxLength="50" />
+          <Property Name="ArtWorkSize" Type="varchar" MaxLength="10" />
+          <Property Name="ArtWorkDateResearch" Type="datetime" />
+          <Property Name="ArtWorkAimResearch" Type="varchar" MaxLength="200" />
+          <Property Name="ArtWorkAuthor" Type="varchar" MaxLength="150" />
+          <Property Name="ArtWorkAuthor_lang" Type="varchar" MaxLength="150" />
+          <Property Name="ArtWorkConclusionNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ArtWorkCreationDate" Type="datetime" />
+          <Property Name="ArtWorkStatus" Type="varchar" MaxLength="20" />
+          <Property Name="ArtWorkDescription" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="tbl_15_Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="varchar" MaxLength="100" />
+          <Property Name="CountryDescription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_16_FotoPictures">
+          <Key>
+            <PropertyRef Name="FotoPicturesId" />
+          </Key>
+          <Property Name="FotoPicturesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArtWorkId" Type="int" Nullable="false" />
+          <Property Name="FotoPictures" Type="image" />
+          <Property Name="FotoPicturesObjects" Type="varchar" MaxLength="1000" />
+          <Property Name="FotoPicturesColors" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="tbl_17_PassportResearch">
+          <Key>
+            <PropertyRef Name="PassportResearchId" />
+          </Key>
+          <Property Name="PassportResearchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArtWorkId" Type="int" Nullable="false" />
+          <Property Name="InstrumentalMethodsId" Type="int" Nullable="false" />
+          <Property Name="Conclusion_the_method" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbl_18_RemarkOfDate">
+          <Key>
+            <PropertyRef Name="RemarkOfDateId" />
+          </Key>
+          <Property Name="RemarkOfDateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArtWorkId" Type="int" Nullable="false" />
+          <Property Name="DateOfCreatedId" Type="int" Nullable="false" />
+          <Property Name="RemarkOfDateCreate" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_19_DateOfCreated">
+          <Key>
+            <PropertyRef Name="DateOfCreatedId" />
+          </Key>
+          <Property Name="DateOfCreatedId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_2_Roles">
+          <Key>
+            <PropertyRef Name="IDRole" />
+          </Key>
+          <Property Name="IDRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_20_InstrumentalMethods">
+          <Key>
+            <PropertyRef Name="InstrumentalMethodsId" />
+          </Key>
+          <Property Name="InstrumentalMethodsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstrumentalMethodsName" Type="varchar" MaxLength="100" />
+          <Property Name="InstrumentalMethodsDescription" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="tbl_21_SpectrumLine">
+          <Key>
+            <PropertyRef Name="SpectrumLineId" />
+          </Key>
+          <Property Name="SpectrumLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LibraryId" Type="int" Nullable="false" />
+          <Property Name="SpectrumLineDate" Type="datetime" />
+          <Property Name="SpectrumLinePersonName" Type="varchar" MaxLength="50" />
+          <Property Name="SpectrumLineWavelLength" Type="float" />
+          <Property Name="OtherOptions" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_22_Spektr">
+          <Key>
+            <PropertyRef Name="SpektrId" />
+          </Key>
+          <Property Name="SpektrId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SpectrumLineId" Type="int" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="ChemicalElementId" Type="int" Nullable="false" />
+          <Property Name="FocusSectionId" Type="int" Nullable="false" />
+          <Property Name="SpektrWaveLenght" Type="float" />
+          <Property Name="LineDescription" Type="varchar" MaxLength="100" />
+          <Property Name="SpektrsBase" Type="varchar" MaxLength="100" />
+          <Property Name="SpektrIntensity" Type="float" />
+          <Property Name="PeakArea" Type="float" />
+        </EntityType>
+        <EntityType Name="tbl_23_StatesOfMatter_ChE">
+          <Key>
+            <PropertyRef Name="StatesOfMatterId" />
+          </Key>
+          <Property Name="StatesOfMatterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChemicalElementId" Type="int" Nullable="false" />
+          <Property Name="StatesOfMatterIdDescription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_24_CrystalStructuresChE">
+          <Key>
+            <PropertyRef Name="CrystalStructureId" />
+          </Key>
+          <Property Name="CrystalStructureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrystalStructureDescription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_25_Isotop_ChE">
+          <Key>
+            <PropertyRef Name="IsotopId" />
+          </Key>
+          <Property Name="IsotopId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChemicalElementId" Type="int" Nullable="false" />
+          <Property Name="IsotopMassValue" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_26_Pigments">
+          <Key>
+            <PropertyRef Name="PigmentsId" />
+          </Key>
+          <Property Name="PigmentsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaintId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="PigmentColor" Type="varchar" MaxLength="40" />
+          <Property Name="PigmentChemicalFormula" Type="varchar" MaxLength="100" />
+          <Property Name="PigmentYearUsed" Type="datetime" />
+          <Property Name="PigmentWhereUsed" Type="varchar" MaxLength="100" />
+          <Property Name="PigmentLiterature" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="tbl_27_Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_3_Privileges">
+          <Key>
+            <PropertyRef Name="PrivilegeId" />
+          </Key>
+          <Property Name="PrivilegeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Privilege" Type="int" />
+          <Property Name="PrivilegeDescription" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="tbl_30_AuthorType">
+          <Key>
+            <PropertyRef Name="AuthorTypeId" />
+          </Key>
+          <Property Name="AuthorTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AuthorTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorSubTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorParentType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_32_FocusSection">
+          <Key>
+            <PropertyRef Name="FocusSectionId" />
+          </Key>
+          <Property Name="FocusSectionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUser" Type="int" Nullable="false" />
+          <Property Name="ArtWorkId" Type="int" Nullable="false" />
+          <Property Name="FocusSectionName" Type="varchar" MaxLength="100" />
+          <Property Name="FocusSectionDate" Type="datetime" />
+          <Property Name="FocusSectionTime" Type="datetime" />
+          <Property Name="FocusSectionSpektrFile" Type="text" />
+          <Property Name="FocusSectionReportFile" Type="text" />
+          <Property Name="LabelFocus" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_33_ObjectsPhoto">
+          <Key>
+            <PropertyRef Name="ObjectsPhotoId" />
+          </Key>
+          <Property Name="ObjectsPhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FocusSectionId" Type="int" Nullable="false" />
+          <Property Name="ObjectsPhotoFile" Type="image" />
+          <Property Name="ObjectsPhotoDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_34_LibrarySpectrumLines">
+          <Key>
+            <PropertyRef Name="LibraryId" />
+          </Key>
+          <Property Name="LibraryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LibraryName" Type="varchar" MaxLength="50" />
+          <Property Name="LibraryCooment" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_34_Peak">
+          <Key>
+            <PropertyRef Name="PeakId" />
+          </Key>
+          <Property Name="PeakId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FocusSectionId" Type="int" Nullable="false" />
+          <Property Name="WaveLenghtPeak" Type="int" />
+          <Property Name="IntensityPeak" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_35_ArtWorkGenre">
+          <Key>
+            <PropertyRef Name="ArtWorkGenreId" />
+          </Key>
+          <Property Name="ArtWorkGenreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArtWorkId" Type="int" Nullable="false" />
+          <Property Name="ArtWorkGenreName" Type="varchar" MaxLength="50" />
+          <Property Name="ArtWorkGenreDescription" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="tbl_36_Technics">
+          <Key>
+            <PropertyRef Name="TechnicsId" />
+          </Key>
+          <Property Name="TechnicsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TechnicsName" Type="varchar" MaxLength="200" />
+          <Property Name="TechnicsRemark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_37_Material">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_38_OtherMaterials">
+          <Key>
+            <PropertyRef Name="OtherMaterialId" />
+          </Key>
+          <Property Name="OtherMaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="OtherMaterialName" Type="varchar" MaxLength="200" />
+          <Property Name="OtherMateriaRemark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_39_Metals">
+          <Key>
+            <PropertyRef Name="MetalId" />
+          </Key>
+          <Property Name="MetalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="MetalName" Type="varchar" MaxLength="200" />
+          <Property Name="MetalRemark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_40_Paints">
+          <Key>
+            <PropertyRef Name="PaintId" />
+          </Key>
+          <Property Name="PaintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="PaintName" Type="varchar" MaxLength="200" />
+          <Property Name="PaintRemark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_5_Organization">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganizationStatus" Type="varchar" MaxLength="100" />
+          <Property Name="OrganizationType" Type="varchar" MaxLength="100" />
+          <Property Name="OrganizationDescription" Type="varchar" MaxLength="256" />
+          <Property Name="OrganizationAdress" Type="varchar" MaxLength="100" />
+          <Property Name="OrganizationEmail" Type="varchar" MaxLength="50" />
+          <Property Name="OrganizationPhoneNumbe" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_6_City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserCity" Type="varchar" MaxLength="100" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="AdministrativeDevision" Type="varchar" MaxLength="100" />
+          <Property Name="Region" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_9_SpektrumLinesChE">
+          <Key>
+            <PropertyRef Name="SpektrumLineChEId" />
+          </Key>
+          <Property Name="SpektrumLineChEId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChemicalElementId" Type="int" Nullable="false" />
+          <Property Name="FocusSectionId" Type="int" Nullable="false" />
+          <Property Name="SpektrumLineChEWavelength" Type="float" />
+          <Property Name="SpektrumLineChEIntensity" Type="float" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="IDUserRole" />
+          </Key>
+          <Property Name="IDUserRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+          <Property Name="IDUser" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TBL_1_US_BELONGS_5_TBL_5_OR">
+          <End Role="tbl_5_Organization" Type="Self.tbl_5_Organization" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_5_Organization">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_1_US_HAS_3_1_TBL_3_PR">
+          <End Role="tbl_3_Privileges" Type="Self.tbl_3_Privileges" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_3_Privileges">
+              <PropertyRef Name="PrivilegeId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="PrivilegeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_1_US_LIVE_6_4_TBL_6_CI">
+          <End Role="tbl_6_City" Type="Self.tbl_6_City" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_6_City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_10_C_HAS_24_10_TBL_24_C">
+          <End Role="tbl_24_CrystalStructuresChE" Type="Self.tbl_24_CrystalStructuresChE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_24_CrystalStructuresChE">
+              <PropertyRef Name="CrystalStructureId" />
+            </Principal>
+            <Dependent Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="CrystalStructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_CONTAINS__TBL_12_G">
+          <End Role="tbl_12_GeografyPlace" Type="Self.tbl_12_GeografyPlace" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_12_GeografyPlace">
+              <PropertyRef Name="GeografyPlaceId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="GeografyPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_HAS_30_11_TBL_30_A">
+          <End Role="tbl_30_AuthorType" Type="Self.tbl_30_AuthorType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_30_AuthorType">
+              <PropertyRef Name="AuthorTypeId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="AuthorTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_INCLUDE_1_TBL_13_H">
+          <End Role="tbl_13_HistoryPeriod" Type="Self.tbl_13_HistoryPeriod" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_13_HistoryPeriod">
+              <PropertyRef Name="HistoryPeriodId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="HistoryPeriodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_12_G_LOCATED_1_TBL_15_C">
+          <End Role="tbl_15_Country" Type="Self.tbl_15_Country" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_12_GeografyPlace" Type="Self.tbl_12_GeografyPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_15_Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="tbl_12_GeografyPlace">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_HAS_11_14_TBL_11_A">
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="AuthorPicturesId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="AuthorPicturesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_HAS_36_14_TBL_36_T">
+          <End Role="tbl_36_Technics" Type="Self.tbl_36_Technics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_36_Technics">
+              <PropertyRef Name="TechnicsId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="TechnicsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_PAINT_37__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_16_F_HAS_14_16_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_16_FotoPictures" Type="Self.tbl_16_FotoPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_16_FotoPictures">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_17_P_HAS_14_17_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_17_PassportResearch" Type="Self.tbl_17_PassportResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_17_PassportResearch">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_17_P_INCLUDE_2_TBL_20_I">
+          <End Role="tbl_20_InstrumentalMethods" Type="Self.tbl_20_InstrumentalMethods" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_17_PassportResearch" Type="Self.tbl_17_PassportResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_20_InstrumentalMethods">
+              <PropertyRef Name="InstrumentalMethodsId" />
+            </Principal>
+            <Dependent Role="tbl_17_PassportResearch">
+              <PropertyRef Name="InstrumentalMethodsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_18_R_CONTAIN_1_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_18_RemarkOfDate" Type="Self.tbl_18_RemarkOfDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_18_RemarkOfDate">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_18_R_HAVE_19_1_TBL_19_D">
+          <End Role="tbl_19_DateOfCreated" Type="Self.tbl_19_DateOfCreated" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_18_RemarkOfDate" Type="Self.tbl_18_RemarkOfDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_19_DateOfCreated">
+              <PropertyRef Name="DateOfCreatedId" />
+            </Principal>
+            <Dependent Role="tbl_18_RemarkOfDate">
+              <PropertyRef Name="DateOfCreatedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_21_S_CONTAINS__TBL_34_L">
+          <End Role="tbl_34_LibrarySpectrumLines" Type="Self.tbl_34_LibrarySpectrumLines" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_21_SpectrumLine" Type="Self.tbl_21_SpectrumLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_34_LibrarySpectrumLines">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="tbl_21_SpectrumLine">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_CONTAINS__TBL_21_S">
+          <End Role="tbl_21_SpectrumLine" Type="Self.tbl_21_SpectrumLine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_21_SpectrumLine">
+              <PropertyRef Name="SpectrumLineId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="SpectrumLineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_HAS_10_22_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_HAS_47_22_TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_INCLUDE_2_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_23_S_HAS_10_23_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_23_StatesOfMatter_ChE" Type="Self.tbl_23_StatesOfMatter_ChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_23_StatesOfMatter_ChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_25_I_HAS_10_25_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_25_Isotop_ChE" Type="Self.tbl_25_Isotop_ChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_25_Isotop_ChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_26_P_HAS_40_26_TBL_40_P">
+          <End Role="tbl_40_Paints" Type="Self.tbl_40_Paints" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_26_Pigments" Type="Self.tbl_26_Pigments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_40_Paints">
+              <PropertyRef Name="PaintId" />
+            </Principal>
+            <Dependent Role="tbl_26_Pigments">
+              <PropertyRef Name="PaintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_26_P_HAVE_27_2_TBL_27_G">
+          <End Role="tbl_27_Group" Type="Self.tbl_27_Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_26_Pigments" Type="Self.tbl_26_Pigments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_27_Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="tbl_26_Pigments">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_32_F_CONDUCTS__TBL_1_US">
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_1_User">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="tbl_32_FocusSection">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_32_F_INCLUDE_1_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1" />
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_32_FocusSection">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_33_O_HAS_32_33_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_33_ObjectsPhoto" Type="Self.tbl_33_ObjectsPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_33_ObjectsPhoto">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_34_P_HAS_32_35_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_34_Peak" Type="Self.tbl_34_Peak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_34_Peak">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_35_A_HAS_14_35_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_35_ArtWorkGenre" Type="Self.tbl_35_ArtWorkGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_35_ArtWorkGenre">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_38_O_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_38_OtherMaterials" Type="Self.tbl_38_OtherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_38_OtherMaterials">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_39_M_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_39_Metals" Type="Self.tbl_39_Metals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_39_Metals">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_40_P_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_40_Paints" Type="Self.tbl_40_Paints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_40_Paints">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_9_SP_HAS_32_9_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_9_SpektrumLinesChE" Type="Self.tbl_9_SpektrumLinesChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_9_SpektrumLinesChE">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_9_SP_MATCHES_1_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_9_SpektrumLinesChE" Type="Self.tbl_9_SpektrumLinesChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_9_SpektrumLinesChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_HAS_2_1_TBL_2_RO">
+          <End Role="tbl_2_Roles" Type="Self.tbl_2_Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_2_Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_HAS_2_2_TBL_1_US">
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_1_User">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBArtWorkRC6ModelStoreContainer">
+          <EntitySet Name="tbl_1_User" EntityType="Self.tbl_1_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_10_ChemicalElement" EntityType="Self.tbl_10_ChemicalElement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_11_AuthorPictures" EntityType="Self.tbl_11_AuthorPictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_12_GeografyPlace" EntityType="Self.tbl_12_GeografyPlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_13_HistoryPeriod" EntityType="Self.tbl_13_HistoryPeriod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_14_ArtWork" EntityType="Self.tbl_14_ArtWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_15_Country" EntityType="Self.tbl_15_Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_16_FotoPictures" EntityType="Self.tbl_16_FotoPictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_17_PassportResearch" EntityType="Self.tbl_17_PassportResearch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_18_RemarkOfDate" EntityType="Self.tbl_18_RemarkOfDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_19_DateOfCreated" EntityType="Self.tbl_19_DateOfCreated" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_2_Roles" EntityType="Self.tbl_2_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_20_InstrumentalMethods" EntityType="Self.tbl_20_InstrumentalMethods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_21_SpectrumLine" EntityType="Self.tbl_21_SpectrumLine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_22_Spektr" EntityType="Self.tbl_22_Spektr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_23_StatesOfMatter_ChE" EntityType="Self.tbl_23_StatesOfMatter_ChE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_24_CrystalStructuresChE" EntityType="Self.tbl_24_CrystalStructuresChE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_25_Isotop_ChE" EntityType="Self.tbl_25_Isotop_ChE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_26_Pigments" EntityType="Self.tbl_26_Pigments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_27_Group" EntityType="Self.tbl_27_Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_3_Privileges" EntityType="Self.tbl_3_Privileges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_30_AuthorType" EntityType="Self.tbl_30_AuthorType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_32_FocusSection" EntityType="Self.tbl_32_FocusSection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_33_ObjectsPhoto" EntityType="Self.tbl_33_ObjectsPhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_34_LibrarySpectrumLines" EntityType="Self.tbl_34_LibrarySpectrumLines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_34_Peak" EntityType="Self.tbl_34_Peak" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_35_ArtWorkGenre" EntityType="Self.tbl_35_ArtWorkGenre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_36_Technics" EntityType="Self.tbl_36_Technics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_37_Material" EntityType="Self.tbl_37_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_38_OtherMaterials" EntityType="Self.tbl_38_OtherMaterials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_39_Metals" EntityType="Self.tbl_39_Metals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_40_Paints" EntityType="Self.tbl_40_Paints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_5_Organization" EntityType="Self.tbl_5_Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_6_City" EntityType="Self.tbl_6_City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_9_SpektrumLinesChE" EntityType="Self.tbl_9_SpektrumLinesChE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_1_US_BELONGS_5_TBL_5_OR" Association="Self.FK_TBL_1_US_BELONGS_5_TBL_5_OR">
+            <End Role="tbl_5_Organization" EntitySet="tbl_5_Organization" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_1_US_HAS_3_1_TBL_3_PR" Association="Self.FK_TBL_1_US_HAS_3_1_TBL_3_PR">
+            <End Role="tbl_3_Privileges" EntitySet="tbl_3_Privileges" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_1_US_LIVE_6_4_TBL_6_CI" Association="Self.FK_TBL_1_US_LIVE_6_4_TBL_6_CI">
+            <End Role="tbl_6_City" EntitySet="tbl_6_City" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_10_C_HAS_24_10_TBL_24_C" Association="Self.FK_TBL_10_C_HAS_24_10_TBL_24_C">
+            <End Role="tbl_24_CrystalStructuresChE" EntitySet="tbl_24_CrystalStructuresChE" />
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_CONTAINS__TBL_12_G" Association="Self.FK_TBL_11_A_CONTAINS__TBL_12_G">
+            <End Role="tbl_12_GeografyPlace" EntitySet="tbl_12_GeografyPlace" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_HAS_30_11_TBL_30_A" Association="Self.FK_TBL_11_A_HAS_30_11_TBL_30_A">
+            <End Role="tbl_30_AuthorType" EntitySet="tbl_30_AuthorType" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_INCLUDE_1_TBL_13_H" Association="Self.FK_TBL_11_A_INCLUDE_1_TBL_13_H">
+            <End Role="tbl_13_HistoryPeriod" EntitySet="tbl_13_HistoryPeriod" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_12_G_LOCATED_1_TBL_15_C" Association="Self.FK_TBL_12_G_LOCATED_1_TBL_15_C">
+            <End Role="tbl_15_Country" EntitySet="tbl_15_Country" />
+            <End Role="tbl_12_GeografyPlace" EntitySet="tbl_12_GeografyPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_HAS_11_14_TBL_11_A" Association="Self.FK_TBL_14_A_HAS_11_14_TBL_11_A">
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_HAS_36_14_TBL_36_T" Association="Self.FK_TBL_14_A_HAS_36_14_TBL_36_T">
+            <End Role="tbl_36_Technics" EntitySet="tbl_36_Technics" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_PAINT_37__TBL_37_M" Association="Self.FK_TBL_14_A_PAINT_37__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_16_F_HAS_14_16_TBL_14_A" Association="Self.FK_TBL_16_F_HAS_14_16_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_16_FotoPictures" EntitySet="tbl_16_FotoPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_17_P_HAS_14_17_TBL_14_A" Association="Self.FK_TBL_17_P_HAS_14_17_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_17_PassportResearch" EntitySet="tbl_17_PassportResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_17_P_INCLUDE_2_TBL_20_I" Association="Self.FK_TBL_17_P_INCLUDE_2_TBL_20_I">
+            <End Role="tbl_20_InstrumentalMethods" EntitySet="tbl_20_InstrumentalMethods" />
+            <End Role="tbl_17_PassportResearch" EntitySet="tbl_17_PassportResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_18_R_CONTAIN_1_TBL_14_A" Association="Self.FK_TBL_18_R_CONTAIN_1_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_18_RemarkOfDate" EntitySet="tbl_18_RemarkOfDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_18_R_HAVE_19_1_TBL_19_D" Association="Self.FK_TBL_18_R_HAVE_19_1_TBL_19_D">
+            <End Role="tbl_19_DateOfCreated" EntitySet="tbl_19_DateOfCreated" />
+            <End Role="tbl_18_RemarkOfDate" EntitySet="tbl_18_RemarkOfDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_21_S_CONTAINS__TBL_34_L" Association="Self.FK_TBL_21_S_CONTAINS__TBL_34_L">
+            <End Role="tbl_34_LibrarySpectrumLines" EntitySet="tbl_34_LibrarySpectrumLines" />
+            <End Role="tbl_21_SpectrumLine" EntitySet="tbl_21_SpectrumLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_CONTAINS__TBL_21_S" Association="Self.FK_TBL_22_S_CONTAINS__TBL_21_S">
+            <End Role="tbl_21_SpectrumLine" EntitySet="tbl_21_SpectrumLine" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_HAS_10_22_TBL_10_C" Association="Self.FK_TBL_22_S_HAS_10_22_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_HAS_47_22_TBL_37_M" Association="Self.FK_TBL_22_S_HAS_47_22_TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_INCLUDE_2_TBL_32_F" Association="Self.FK_TBL_22_S_INCLUDE_2_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_23_S_HAS_10_23_TBL_10_C" Association="Self.FK_TBL_23_S_HAS_10_23_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_23_StatesOfMatter_ChE" EntitySet="tbl_23_StatesOfMatter_ChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_25_I_HAS_10_25_TBL_10_C" Association="Self.FK_TBL_25_I_HAS_10_25_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_25_Isotop_ChE" EntitySet="tbl_25_Isotop_ChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_26_P_HAS_40_26_TBL_40_P" Association="Self.FK_TBL_26_P_HAS_40_26_TBL_40_P">
+            <End Role="tbl_40_Paints" EntitySet="tbl_40_Paints" />
+            <End Role="tbl_26_Pigments" EntitySet="tbl_26_Pigments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_26_P_HAVE_27_2_TBL_27_G" Association="Self.FK_TBL_26_P_HAVE_27_2_TBL_27_G">
+            <End Role="tbl_27_Group" EntitySet="tbl_27_Group" />
+            <End Role="tbl_26_Pigments" EntitySet="tbl_26_Pigments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_32_F_CONDUCTS__TBL_1_US" Association="Self.FK_TBL_32_F_CONDUCTS__TBL_1_US">
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_32_F_INCLUDE_1_TBL_14_A" Association="Self.FK_TBL_32_F_INCLUDE_1_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_33_O_HAS_32_33_TBL_32_F" Association="Self.FK_TBL_33_O_HAS_32_33_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_33_ObjectsPhoto" EntitySet="tbl_33_ObjectsPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_34_P_HAS_32_35_TBL_32_F" Association="Self.FK_TBL_34_P_HAS_32_35_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_34_Peak" EntitySet="tbl_34_Peak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_35_A_HAS_14_35_TBL_14_A" Association="Self.FK_TBL_35_A_HAS_14_35_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_35_ArtWorkGenre" EntitySet="tbl_35_ArtWorkGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_38_O_COMPOSED__TBL_37_M" Association="Self.FK_TBL_38_O_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_38_OtherMaterials" EntitySet="tbl_38_OtherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_39_M_COMPOSED__TBL_37_M" Association="Self.FK_TBL_39_M_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_39_Metals" EntitySet="tbl_39_Metals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_40_P_COMPOSED__TBL_37_M" Association="Self.FK_TBL_40_P_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_40_Paints" EntitySet="tbl_40_Paints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_9_SP_HAS_32_9_TBL_32_F" Association="Self.FK_TBL_9_SP_HAS_32_9_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_9_SpektrumLinesChE" EntitySet="tbl_9_SpektrumLinesChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_9_SP_MATCHES_1_TBL_10_C" Association="Self.FK_TBL_9_SP_MATCHES_1_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_9_SpektrumLinesChE" EntitySet="tbl_9_SpektrumLinesChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_HAS_2_1_TBL_2_RO" Association="Self.FK_USERROLE_HAS_2_1_TBL_2_RO">
+            <End Role="tbl_2_Roles" EntitySet="tbl_2_Roles" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_HAS_2_2_TBL_1_US" Association="Self.FK_USERROLE_HAS_2_2_TBL_1_US">
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBArtWorkRC6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_1_User">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationId" Type="Int32" Nullable="false" />
+          <Property Name="PrivilegeId" Type="Int32" Nullable="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="UserFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserMiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserMobilePhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ActivatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ActivatedLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastVisitDate" Type="DateTime" Precision="3" />
+          <Property Name="AvatarPath" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbl_5_Organization" Relationship="Self.FK_TBL_1_US_BELONGS_5_TBL_5_OR" FromRole="tbl_1_User" ToRole="tbl_5_Organization" />
+          <NavigationProperty Name="tbl_3_Privileges" Relationship="Self.FK_TBL_1_US_HAS_3_1_TBL_3_PR" FromRole="tbl_1_User" ToRole="tbl_3_Privileges" />
+          <NavigationProperty Name="tbl_6_City" Relationship="Self.FK_TBL_1_US_LIVE_6_4_TBL_6_CI" FromRole="tbl_1_User" ToRole="tbl_6_City" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_32_F_CONDUCTS__TBL_1_US" FromRole="tbl_1_User" ToRole="tbl_32_FocusSection" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK_USERROLE_HAS_2_2_TBL_1_US" FromRole="tbl_1_User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="tbl_10_ChemicalElement">
+          <Key>
+            <PropertyRef Name="ChemicalElementId" />
+          </Key>
+          <Property Name="ChemicalElementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrystalStructureId" Type="Int32" Nullable="false" />
+          <Property Name="ChemicalElementName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ChemicalElementDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="ChemicalElementAtomicNumber" Type="Int32" />
+          <Property Name="ChemicalElementAtomicWeight" Type="Double" />
+          <Property Name="ChemicalElementCore" Type="Int32" />
+          <Property Name="ChemicalElementIons" Type="Int32" />
+          <NavigationProperty Name="tbl_24_CrystalStructuresChE" Relationship="Self.FK_TBL_10_C_HAS_24_10_TBL_24_C" FromRole="tbl_10_ChemicalElement" ToRole="tbl_24_CrystalStructuresChE" />
+          <NavigationProperty Name="tbl_22_Spektr" Relationship="Self.FK_TBL_22_S_HAS_10_22_TBL_10_C" FromRole="tbl_10_ChemicalElement" ToRole="tbl_22_Spektr" />
+          <NavigationProperty Name="tbl_23_StatesOfMatter_ChE" Relationship="Self.FK_TBL_23_S_HAS_10_23_TBL_10_C" FromRole="tbl_10_ChemicalElement" ToRole="tbl_23_StatesOfMatter_ChE" />
+          <NavigationProperty Name="tbl_25_Isotop_ChE" Relationship="Self.FK_TBL_25_I_HAS_10_25_TBL_10_C" FromRole="tbl_10_ChemicalElement" ToRole="tbl_25_Isotop_ChE" />
+          <NavigationProperty Name="tbl_9_SpektrumLinesChE" Relationship="Self.FK_TBL_9_SP_MATCHES_1_TBL_10_C" FromRole="tbl_10_ChemicalElement" ToRole="tbl_9_SpektrumLinesChE" />
+        </EntityType>
+        <EntityType Name="tbl_11_AuthorPictures">
+          <Key>
+            <PropertyRef Name="AuthorPicturesId" />
+          </Key>
+          <Property Name="AuthorPicturesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GeografyPlaceId" Type="Int32" Nullable="false" />
+          <Property Name="HistoryPeriodId" Type="Int32" Nullable="false" />
+          <Property Name="AuthorTypeId" Type="Int32" Nullable="false" />
+          <Property Name="AuthorFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorDate_of_birth" Type="DateTime" Precision="3" />
+          <Property Name="AuthorOtherDates" Type="DateTime" Precision="3" />
+          <Property Name="AuthorBiography" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_12_GeografyPlace" Relationship="Self.FK_TBL_11_A_CONTAINS__TBL_12_G" FromRole="tbl_11_AuthorPictures" ToRole="tbl_12_GeografyPlace" />
+          <NavigationProperty Name="tbl_30_AuthorType" Relationship="Self.FK_TBL_11_A_HAS_30_11_TBL_30_A" FromRole="tbl_11_AuthorPictures" ToRole="tbl_30_AuthorType" />
+          <NavigationProperty Name="tbl_13_HistoryPeriod" Relationship="Self.FK_TBL_11_A_INCLUDE_1_TBL_13_H" FromRole="tbl_11_AuthorPictures" ToRole="tbl_13_HistoryPeriod" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_14_A_HAS_11_14_TBL_11_A" FromRole="tbl_11_AuthorPictures" ToRole="tbl_14_ArtWork" />
+        </EntityType>
+        <EntityType Name="tbl_12_GeografyPlace">
+          <Key>
+            <PropertyRef Name="GeografyPlaceId" />
+          </Key>
+          <Property Name="GeografyPlaceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="GeografyPlaceCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Administrative_District_1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Administrative_District_2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Administrative_District_3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_11_AuthorPictures" Relationship="Self.FK_TBL_11_A_CONTAINS__TBL_12_G" FromRole="tbl_12_GeografyPlace" ToRole="tbl_11_AuthorPictures" />
+          <NavigationProperty Name="tbl_15_Country" Relationship="Self.FK_TBL_12_G_LOCATED_1_TBL_15_C" FromRole="tbl_12_GeografyPlace" ToRole="tbl_15_Country" />
+        </EntityType>
+        <EntityType Name="tbl_13_HistoryPeriod">
+          <Key>
+            <PropertyRef Name="HistoryPeriodId" />
+          </Key>
+          <Property Name="HistoryPeriodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HistoryPeriodName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HistoryPeriodIdDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="HistoryPeriodIdDates" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_11_AuthorPictures" Relationship="Self.FK_TBL_11_A_INCLUDE_1_TBL_13_H" FromRole="tbl_13_HistoryPeriod" ToRole="tbl_11_AuthorPictures" />
+        </EntityType>
+        <EntityType Name="tbl_14_ArtWork">
+          <Key>
+            <PropertyRef Name="ArtWorkId" />
+          </Key>
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorPicturesId" Type="Int32" Nullable="false" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="TechnicsId" Type="Int32" Nullable="false" />
+          <Property Name="ArtWorkName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkOriginalName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkSize" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkDateResearch" Type="DateTime" Precision="3" />
+          <Property Name="ArtWorkAimResearch" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkAuthor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkAuthor_lang" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkConclusionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkCreationDate" Type="DateTime" Precision="3" />
+          <Property Name="ArtWorkStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_11_AuthorPictures" Relationship="Self.FK_TBL_14_A_HAS_11_14_TBL_11_A" FromRole="tbl_14_ArtWork" ToRole="tbl_11_AuthorPictures" />
+          <NavigationProperty Name="tbl_36_Technics" Relationship="Self.FK_TBL_14_A_HAS_36_14_TBL_36_T" FromRole="tbl_14_ArtWork" ToRole="tbl_36_Technics" />
+          <NavigationProperty Name="tbl_37_Material" Relationship="Self.FK_TBL_14_A_PAINT_37__TBL_37_M" FromRole="tbl_14_ArtWork" ToRole="tbl_37_Material" />
+          <NavigationProperty Name="tbl_16_FotoPictures" Relationship="Self.FK_TBL_16_F_HAS_14_16_TBL_14_A" FromRole="tbl_14_ArtWork" ToRole="tbl_16_FotoPictures" />
+          <NavigationProperty Name="tbl_17_PassportResearch" Relationship="Self.FK_TBL_17_P_HAS_14_17_TBL_14_A" FromRole="tbl_14_ArtWork" ToRole="tbl_17_PassportResearch" />
+          <NavigationProperty Name="tbl_18_RemarkOfDate" Relationship="Self.FK_TBL_18_R_CONTAIN_1_TBL_14_A" FromRole="tbl_14_ArtWork" ToRole="tbl_18_RemarkOfDate" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_32_F_INCLUDE_1_TBL_14_A" FromRole="tbl_14_ArtWork" ToRole="tbl_32_FocusSection" />
+          <NavigationProperty Name="tbl_35_ArtWorkGenre" Relationship="Self.FK_TBL_35_A_HAS_14_35_TBL_14_A" FromRole="tbl_14_ArtWork" ToRole="tbl_35_ArtWorkGenre" />
+        </EntityType>
+        <EntityType Name="tbl_15_Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_12_GeografyPlace" Relationship="Self.FK_TBL_12_G_LOCATED_1_TBL_15_C" FromRole="tbl_15_Country" ToRole="tbl_12_GeografyPlace" />
+        </EntityType>
+        <EntityType Name="tbl_16_FotoPictures">
+          <Key>
+            <PropertyRef Name="FotoPicturesId" />
+          </Key>
+          <Property Name="FotoPicturesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" />
+          <Property Name="FotoPictures" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FotoPicturesObjects" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FotoPicturesColors" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_16_F_HAS_14_16_TBL_14_A" FromRole="tbl_16_FotoPictures" ToRole="tbl_14_ArtWork" />
+        </EntityType>
+        <EntityType Name="tbl_17_PassportResearch">
+          <Key>
+            <PropertyRef Name="PassportResearchId" />
+          </Key>
+          <Property Name="PassportResearchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" />
+          <Property Name="InstrumentalMethodsId" Type="Int32" Nullable="false" />
+          <Property Name="Conclusion_the_method" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_17_P_HAS_14_17_TBL_14_A" FromRole="tbl_17_PassportResearch" ToRole="tbl_14_ArtWork" />
+          <NavigationProperty Name="tbl_20_InstrumentalMethods" Relationship="Self.FK_TBL_17_P_INCLUDE_2_TBL_20_I" FromRole="tbl_17_PassportResearch" ToRole="tbl_20_InstrumentalMethods" />
+        </EntityType>
+        <EntityType Name="tbl_18_RemarkOfDate">
+          <Key>
+            <PropertyRef Name="RemarkOfDateId" />
+          </Key>
+          <Property Name="RemarkOfDateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" />
+          <Property Name="DateOfCreatedId" Type="Int32" Nullable="false" />
+          <Property Name="RemarkOfDateCreate" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_18_R_CONTAIN_1_TBL_14_A" FromRole="tbl_18_RemarkOfDate" ToRole="tbl_14_ArtWork" />
+          <NavigationProperty Name="tbl_19_DateOfCreated" Relationship="Self.FK_TBL_18_R_HAVE_19_1_TBL_19_D" FromRole="tbl_18_RemarkOfDate" ToRole="tbl_19_DateOfCreated" />
+        </EntityType>
+        <EntityType Name="tbl_19_DateOfCreated">
+          <Key>
+            <PropertyRef Name="DateOfCreatedId" />
+          </Key>
+          <Property Name="DateOfCreatedId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfCreated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_18_RemarkOfDate" Relationship="Self.FK_TBL_18_R_HAVE_19_1_TBL_19_D" FromRole="tbl_19_DateOfCreated" ToRole="tbl_18_RemarkOfDate" />
+        </EntityType>
+        <EntityType Name="tbl_2_Roles">
+          <Key>
+            <PropertyRef Name="IDRole" />
+          </Key>
+          <Property Name="IDRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK_USERROLE_HAS_2_1_TBL_2_RO" FromRole="tbl_2_Roles" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="tbl_20_InstrumentalMethods">
+          <Key>
+            <PropertyRef Name="InstrumentalMethodsId" />
+          </Key>
+          <Property Name="InstrumentalMethodsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InstrumentalMethodsName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="InstrumentalMethodsDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_17_PassportResearch" Relationship="Self.FK_TBL_17_P_INCLUDE_2_TBL_20_I" FromRole="tbl_20_InstrumentalMethods" ToRole="tbl_17_PassportResearch" />
+        </EntityType>
+        <EntityType Name="tbl_21_SpectrumLine">
+          <Key>
+            <PropertyRef Name="SpectrumLineId" />
+          </Key>
+          <Property Name="SpectrumLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LibraryId" Type="Int32" Nullable="false" />
+          <Property Name="SpectrumLineDate" Type="DateTime" Precision="3" />
+          <Property Name="SpectrumLinePersonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpectrumLineWavelLength" Type="Double" />
+          <Property Name="OtherOptions" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_34_LibrarySpectrumLines" Relationship="Self.FK_TBL_21_S_CONTAINS__TBL_34_L" FromRole="tbl_21_SpectrumLine" ToRole="tbl_34_LibrarySpectrumLines" />
+          <NavigationProperty Name="tbl_22_Spektr" Relationship="Self.FK_TBL_22_S_CONTAINS__TBL_21_S" FromRole="tbl_21_SpectrumLine" ToRole="tbl_22_Spektr" />
+        </EntityType>
+        <EntityType Name="tbl_22_Spektr">
+          <Key>
+            <PropertyRef Name="SpektrId" />
+          </Key>
+          <Property Name="SpektrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SpectrumLineId" Type="Int32" Nullable="false" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="ChemicalElementId" Type="Int32" Nullable="false" />
+          <Property Name="FocusSectionId" Type="Int32" Nullable="false" />
+          <Property Name="SpektrWaveLenght" Type="Double" />
+          <Property Name="LineDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpektrsBase" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpektrIntensity" Type="Double" />
+          <Property Name="PeakArea" Type="Double" />
+          <NavigationProperty Name="tbl_10_ChemicalElement" Relationship="Self.FK_TBL_22_S_HAS_10_22_TBL_10_C" FromRole="tbl_22_Spektr" ToRole="tbl_10_ChemicalElement" />
+          <NavigationProperty Name="tbl_21_SpectrumLine" Relationship="Self.FK_TBL_22_S_CONTAINS__TBL_21_S" FromRole="tbl_22_Spektr" ToRole="tbl_21_SpectrumLine" />
+          <NavigationProperty Name="tbl_37_Material" Relationship="Self.FK_TBL_22_S_HAS_47_22_TBL_37_M" FromRole="tbl_22_Spektr" ToRole="tbl_37_Material" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_22_S_INCLUDE_2_TBL_32_F" FromRole="tbl_22_Spektr" ToRole="tbl_32_FocusSection" />
+        </EntityType>
+        <EntityType Name="tbl_23_StatesOfMatter_ChE">
+          <Key>
+            <PropertyRef Name="StatesOfMatterId" />
+          </Key>
+          <Property Name="StatesOfMatterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChemicalElementId" Type="Int32" Nullable="false" />
+          <Property Name="StatesOfMatterIdDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_10_ChemicalElement" Relationship="Self.FK_TBL_23_S_HAS_10_23_TBL_10_C" FromRole="tbl_23_StatesOfMatter_ChE" ToRole="tbl_10_ChemicalElement" />
+        </EntityType>
+        <EntityType Name="tbl_24_CrystalStructuresChE">
+          <Key>
+            <PropertyRef Name="CrystalStructureId" />
+          </Key>
+          <Property Name="CrystalStructureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrystalStructureDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_10_ChemicalElement" Relationship="Self.FK_TBL_10_C_HAS_24_10_TBL_24_C" FromRole="tbl_24_CrystalStructuresChE" ToRole="tbl_10_ChemicalElement" />
+        </EntityType>
+        <EntityType Name="tbl_25_Isotop_ChE">
+          <Key>
+            <PropertyRef Name="IsotopId" />
+          </Key>
+          <Property Name="IsotopId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChemicalElementId" Type="Int32" Nullable="false" />
+          <Property Name="IsotopMassValue" Type="Int32" />
+          <NavigationProperty Name="tbl_10_ChemicalElement" Relationship="Self.FK_TBL_25_I_HAS_10_25_TBL_10_C" FromRole="tbl_25_Isotop_ChE" ToRole="tbl_10_ChemicalElement" />
+        </EntityType>
+        <EntityType Name="tbl_26_Pigments">
+          <Key>
+            <PropertyRef Name="PigmentsId" />
+          </Key>
+          <Property Name="PigmentsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaintId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="PigmentColor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PigmentChemicalFormula" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PigmentYearUsed" Type="DateTime" Precision="3" />
+          <Property Name="PigmentWhereUsed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PigmentLiterature" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_40_Paints" Relationship="Self.FK_TBL_26_P_HAS_40_26_TBL_40_P" FromRole="tbl_26_Pigments" ToRole="tbl_40_Paints" />
+          <NavigationProperty Name="tbl_27_Group" Relationship="Self.FK_TBL_26_P_HAVE_27_2_TBL_27_G" FromRole="tbl_26_Pigments" ToRole="tbl_27_Group" />
+        </EntityType>
+        <EntityType Name="tbl_27_Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_26_Pigments" Relationship="Self.FK_TBL_26_P_HAVE_27_2_TBL_27_G" FromRole="tbl_27_Group" ToRole="tbl_26_Pigments" />
+        </EntityType>
+        <EntityType Name="tbl_3_Privileges">
+          <Key>
+            <PropertyRef Name="PrivilegeId" />
+          </Key>
+          <Property Name="PrivilegeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Privilege" Type="Int32" />
+          <Property Name="PrivilegeDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_1_User" Relationship="Self.FK_TBL_1_US_HAS_3_1_TBL_3_PR" FromRole="tbl_3_Privileges" ToRole="tbl_1_User" />
+        </EntityType>
+        <EntityType Name="tbl_30_AuthorType">
+          <Key>
+            <PropertyRef Name="AuthorTypeId" />
+          </Key>
+          <Property Name="AuthorTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorSubTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorParentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_11_AuthorPictures" Relationship="Self.FK_TBL_11_A_HAS_30_11_TBL_30_A" FromRole="tbl_30_AuthorType" ToRole="tbl_11_AuthorPictures" />
+        </EntityType>
+        <EntityType Name="tbl_32_FocusSection">
+          <Key>
+            <PropertyRef Name="FocusSectionId" />
+          </Key>
+          <Property Name="FocusSectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" />
+          <Property Name="FocusSectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FocusSectionDate" Type="DateTime" Precision="3" />
+          <Property Name="FocusSectionTime" Type="DateTime" Precision="3" />
+          <Property Name="FocusSectionSpektrFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FocusSectionReportFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LabelFocus" Type="Int32" />
+          <NavigationProperty Name="tbl_1_User" Relationship="Self.FK_TBL_32_F_CONDUCTS__TBL_1_US" FromRole="tbl_32_FocusSection" ToRole="tbl_1_User" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_32_F_INCLUDE_1_TBL_14_A" FromRole="tbl_32_FocusSection" ToRole="tbl_14_ArtWork" />
+          <NavigationProperty Name="tbl_22_Spektr" Relationship="Self.FK_TBL_22_S_INCLUDE_2_TBL_32_F" FromRole="tbl_32_FocusSection" ToRole="tbl_22_Spektr" />
+          <NavigationProperty Name="tbl_33_ObjectsPhoto" Relationship="Self.FK_TBL_33_O_HAS_32_33_TBL_32_F" FromRole="tbl_32_FocusSection" ToRole="tbl_33_ObjectsPhoto" />
+          <NavigationProperty Name="tbl_34_Peak" Relationship="Self.FK_TBL_34_P_HAS_32_35_TBL_32_F" FromRole="tbl_32_FocusSection" ToRole="tbl_34_Peak" />
+          <NavigationProperty Name="tbl_9_SpektrumLinesChE" Relationship="Self.FK_TBL_9_SP_HAS_32_9_TBL_32_F" FromRole="tbl_32_FocusSection" ToRole="tbl_9_SpektrumLinesChE" />
+        </EntityType>
+        <EntityType Name="tbl_33_ObjectsPhoto">
+          <Key>
+            <PropertyRef Name="ObjectsPhotoId" />
+          </Key>
+          <Property Name="ObjectsPhotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FocusSectionId" Type="Int32" Nullable="false" />
+          <Property Name="ObjectsPhotoFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ObjectsPhotoDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_33_O_HAS_32_33_TBL_32_F" FromRole="tbl_33_ObjectsPhoto" ToRole="tbl_32_FocusSection" />
+        </EntityType>
+        <EntityType Name="tbl_34_LibrarySpectrumLines">
+          <Key>
+            <PropertyRef Name="LibraryId" />
+          </Key>
+          <Property Name="LibraryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LibraryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LibraryCooment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_21_SpectrumLine" Relationship="Self.FK_TBL_21_S_CONTAINS__TBL_34_L" FromRole="tbl_34_LibrarySpectrumLines" ToRole="tbl_21_SpectrumLine" />
+        </EntityType>
+        <EntityType Name="tbl_34_Peak">
+          <Key>
+            <PropertyRef Name="PeakId" />
+          </Key>
+          <Property Name="PeakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FocusSectionId" Type="Int32" Nullable="false" />
+          <Property Name="WaveLenghtPeak" Type="Int32" />
+          <Property Name="IntensityPeak" Type="Int32" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_34_P_HAS_32_35_TBL_32_F" FromRole="tbl_34_Peak" ToRole="tbl_32_FocusSection" />
+        </EntityType>
+        <EntityType Name="tbl_35_ArtWorkGenre">
+          <Key>
+            <PropertyRef Name="ArtWorkGenreId" />
+          </Key>
+          <Property Name="ArtWorkGenreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArtWorkId" Type="Int32" Nullable="false" />
+          <Property Name="ArtWorkGenreName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArtWorkGenreDescription" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_35_A_HAS_14_35_TBL_14_A" FromRole="tbl_35_ArtWorkGenre" ToRole="tbl_14_ArtWork" />
+        </EntityType>
+        <EntityType Name="tbl_36_Technics">
+          <Key>
+            <PropertyRef Name="TechnicsId" />
+          </Key>
+          <Property Name="TechnicsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TechnicsName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TechnicsRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_14_A_HAS_36_14_TBL_36_T" FromRole="tbl_36_Technics" ToRole="tbl_14_ArtWork" />
+        </EntityType>
+        <EntityType Name="tbl_37_Material">
+          <Key>
+            <PropertyRef Name="MaterialId" />
+          </Key>
+          <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_14_ArtWork" Relationship="Self.FK_TBL_14_A_PAINT_37__TBL_37_M" FromRole="tbl_37_Material" ToRole="tbl_14_ArtWork" />
+          <NavigationProperty Name="tbl_22_Spektr" Relationship="Self.FK_TBL_22_S_HAS_47_22_TBL_37_M" FromRole="tbl_37_Material" ToRole="tbl_22_Spektr" />
+          <NavigationProperty Name="tbl_38_OtherMaterials" Relationship="Self.FK_TBL_38_O_COMPOSED__TBL_37_M" FromRole="tbl_37_Material" ToRole="tbl_38_OtherMaterials" />
+          <NavigationProperty Name="tbl_39_Metals" Relationship="Self.FK_TBL_39_M_COMPOSED__TBL_37_M" FromRole="tbl_37_Material" ToRole="tbl_39_Metals" />
+          <NavigationProperty Name="tbl_40_Paints" Relationship="Self.FK_TBL_40_P_COMPOSED__TBL_37_M" FromRole="tbl_37_Material" ToRole="tbl_40_Paints" />
+        </EntityType>
+        <EntityType Name="tbl_38_OtherMaterials">
+          <Key>
+            <PropertyRef Name="OtherMaterialId" />
+          </Key>
+          <Property Name="OtherMaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="OtherMaterialName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OtherMateriaRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_37_Material" Relationship="Self.FK_TBL_38_O_COMPOSED__TBL_37_M" FromRole="tbl_38_OtherMaterials" ToRole="tbl_37_Material" />
+        </EntityType>
+        <EntityType Name="tbl_39_Metals">
+          <Key>
+            <PropertyRef Name="MetalId" />
+          </Key>
+          <Property Name="MetalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="MetalName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MetalRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_37_Material" Relationship="Self.FK_TBL_39_M_COMPOSED__TBL_37_M" FromRole="tbl_39_Metals" ToRole="tbl_37_Material" />
+        </EntityType>
+        <EntityType Name="tbl_40_Paints">
+          <Key>
+            <PropertyRef Name="PaintId" />
+          </Key>
+          <Property Name="PaintId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="PaintName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PaintRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_26_Pigments" Relationship="Self.FK_TBL_26_P_HAS_40_26_TBL_40_P" FromRole="tbl_40_Paints" ToRole="tbl_26_Pigments" />
+          <NavigationProperty Name="tbl_37_Material" Relationship="Self.FK_TBL_40_P_COMPOSED__TBL_37_M" FromRole="tbl_40_Paints" ToRole="tbl_37_Material" />
+        </EntityType>
+        <EntityType Name="tbl_5_Organization">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationAdress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrganizationPhoneNumbe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_1_User" Relationship="Self.FK_TBL_1_US_BELONGS_5_TBL_5_OR" FromRole="tbl_5_Organization" ToRole="tbl_1_User" />
+        </EntityType>
+        <EntityType Name="tbl_6_City">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AdministrativeDevision" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Region" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_1_User" Relationship="Self.FK_TBL_1_US_LIVE_6_4_TBL_6_CI" FromRole="tbl_6_City" ToRole="tbl_1_User" />
+        </EntityType>
+        <EntityType Name="tbl_9_SpektrumLinesChE">
+          <Key>
+            <PropertyRef Name="SpektrumLineChEId" />
+          </Key>
+          <Property Name="SpektrumLineChEId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChemicalElementId" Type="Int32" Nullable="false" />
+          <Property Name="FocusSectionId" Type="Int32" Nullable="false" />
+          <Property Name="SpektrumLineChEWavelength" Type="Double" />
+          <Property Name="SpektrumLineChEIntensity" Type="Double" />
+          <NavigationProperty Name="tbl_10_ChemicalElement" Relationship="Self.FK_TBL_9_SP_MATCHES_1_TBL_10_C" FromRole="tbl_9_SpektrumLinesChE" ToRole="tbl_10_ChemicalElement" />
+          <NavigationProperty Name="tbl_32_FocusSection" Relationship="Self.FK_TBL_9_SP_HAS_32_9_TBL_32_F" FromRole="tbl_9_SpektrumLinesChE" ToRole="tbl_32_FocusSection" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="IDUserRole" />
+          </Key>
+          <Property Name="IDUserRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_1_User" Relationship="Self.FK_USERROLE_HAS_2_2_TBL_1_US" FromRole="UserRole" ToRole="tbl_1_User" />
+          <NavigationProperty Name="tbl_2_Roles" Relationship="Self.FK_USERROLE_HAS_2_1_TBL_2_RO" FromRole="UserRole" ToRole="tbl_2_Roles" />
+        </EntityType>
+        <Association Name="FK_TBL_1_US_BELONGS_5_TBL_5_OR">
+          <End Role="tbl_5_Organization" Type="Self.tbl_5_Organization" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_5_Organization">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_1_US_HAS_3_1_TBL_3_PR">
+          <End Role="tbl_3_Privileges" Type="Self.tbl_3_Privileges" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_3_Privileges">
+              <PropertyRef Name="PrivilegeId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="PrivilegeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_1_US_LIVE_6_4_TBL_6_CI">
+          <End Role="tbl_6_City" Type="Self.tbl_6_City" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_6_City">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="tbl_1_User">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_32_F_CONDUCTS__TBL_1_US">
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_1_User">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="tbl_32_FocusSection">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_HAS_2_2_TBL_1_US">
+          <End Role="tbl_1_User" Type="Self.tbl_1_User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_1_User">
+              <PropertyRef Name="IDUser" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IDUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_10_C_HAS_24_10_TBL_24_C">
+          <End Role="tbl_24_CrystalStructuresChE" Type="Self.tbl_24_CrystalStructuresChE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_24_CrystalStructuresChE">
+              <PropertyRef Name="CrystalStructureId" />
+            </Principal>
+            <Dependent Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="CrystalStructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_HAS_10_22_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_23_S_HAS_10_23_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_23_StatesOfMatter_ChE" Type="Self.tbl_23_StatesOfMatter_ChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_23_StatesOfMatter_ChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_25_I_HAS_10_25_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_25_Isotop_ChE" Type="Self.tbl_25_Isotop_ChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_25_Isotop_ChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_9_SP_MATCHES_1_TBL_10_C">
+          <End Role="tbl_10_ChemicalElement" Type="Self.tbl_10_ChemicalElement" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_9_SpektrumLinesChE" Type="Self.tbl_9_SpektrumLinesChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_10_ChemicalElement">
+              <PropertyRef Name="ChemicalElementId" />
+            </Principal>
+            <Dependent Role="tbl_9_SpektrumLinesChE">
+              <PropertyRef Name="ChemicalElementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_CONTAINS__TBL_12_G">
+          <End Role="tbl_12_GeografyPlace" Type="Self.tbl_12_GeografyPlace" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_12_GeografyPlace">
+              <PropertyRef Name="GeografyPlaceId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="GeografyPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_HAS_30_11_TBL_30_A">
+          <End Role="tbl_30_AuthorType" Type="Self.tbl_30_AuthorType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_30_AuthorType">
+              <PropertyRef Name="AuthorTypeId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="AuthorTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_11_A_INCLUDE_1_TBL_13_H">
+          <End Role="tbl_13_HistoryPeriod" Type="Self.tbl_13_HistoryPeriod" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_13_HistoryPeriod">
+              <PropertyRef Name="HistoryPeriodId" />
+            </Principal>
+            <Dependent Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="HistoryPeriodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_HAS_11_14_TBL_11_A">
+          <End Role="tbl_11_AuthorPictures" Type="Self.tbl_11_AuthorPictures" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_11_AuthorPictures">
+              <PropertyRef Name="AuthorPicturesId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="AuthorPicturesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_12_G_LOCATED_1_TBL_15_C">
+          <End Role="tbl_15_Country" Type="Self.tbl_15_Country" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_12_GeografyPlace" Type="Self.tbl_12_GeografyPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_15_Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="tbl_12_GeografyPlace">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_HAS_36_14_TBL_36_T">
+          <End Role="tbl_36_Technics" Type="Self.tbl_36_Technics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_36_Technics">
+              <PropertyRef Name="TechnicsId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="TechnicsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_14_A_PAINT_37__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_14_ArtWork">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_16_F_HAS_14_16_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_16_FotoPictures" Type="Self.tbl_16_FotoPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_16_FotoPictures">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_17_P_HAS_14_17_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_17_PassportResearch" Type="Self.tbl_17_PassportResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_17_PassportResearch">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_18_R_CONTAIN_1_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_18_RemarkOfDate" Type="Self.tbl_18_RemarkOfDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_18_RemarkOfDate">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_32_F_INCLUDE_1_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1" />
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_32_FocusSection">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_35_A_HAS_14_35_TBL_14_A">
+          <End Role="tbl_14_ArtWork" Type="Self.tbl_14_ArtWork" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_35_ArtWorkGenre" Type="Self.tbl_35_ArtWorkGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_14_ArtWork">
+              <PropertyRef Name="ArtWorkId" />
+            </Principal>
+            <Dependent Role="tbl_35_ArtWorkGenre">
+              <PropertyRef Name="ArtWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_17_P_INCLUDE_2_TBL_20_I">
+          <End Role="tbl_20_InstrumentalMethods" Type="Self.tbl_20_InstrumentalMethods" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_17_PassportResearch" Type="Self.tbl_17_PassportResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_20_InstrumentalMethods">
+              <PropertyRef Name="InstrumentalMethodsId" />
+            </Principal>
+            <Dependent Role="tbl_17_PassportResearch">
+              <PropertyRef Name="InstrumentalMethodsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_18_R_HAVE_19_1_TBL_19_D">
+          <End Role="tbl_19_DateOfCreated" Type="Self.tbl_19_DateOfCreated" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_18_RemarkOfDate" Type="Self.tbl_18_RemarkOfDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_19_DateOfCreated">
+              <PropertyRef Name="DateOfCreatedId" />
+            </Principal>
+            <Dependent Role="tbl_18_RemarkOfDate">
+              <PropertyRef Name="DateOfCreatedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_HAS_2_1_TBL_2_RO">
+          <End Role="tbl_2_Roles" Type="Self.tbl_2_Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_2_Roles">
+              <PropertyRef Name="IDRole" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_21_S_CONTAINS__TBL_34_L">
+          <End Role="tbl_34_LibrarySpectrumLines" Type="Self.tbl_34_LibrarySpectrumLines" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_21_SpectrumLine" Type="Self.tbl_21_SpectrumLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_34_LibrarySpectrumLines">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="tbl_21_SpectrumLine">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_CONTAINS__TBL_21_S">
+          <End Role="tbl_21_SpectrumLine" Type="Self.tbl_21_SpectrumLine" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_21_SpectrumLine">
+              <PropertyRef Name="SpectrumLineId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="SpectrumLineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_HAS_47_22_TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_22_S_INCLUDE_2_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_22_Spektr" Type="Self.tbl_22_Spektr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_22_Spektr">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_26_P_HAS_40_26_TBL_40_P">
+          <End Role="tbl_40_Paints" Type="Self.tbl_40_Paints" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_26_Pigments" Type="Self.tbl_26_Pigments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_40_Paints">
+              <PropertyRef Name="PaintId" />
+            </Principal>
+            <Dependent Role="tbl_26_Pigments">
+              <PropertyRef Name="PaintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_26_P_HAVE_27_2_TBL_27_G">
+          <End Role="tbl_27_Group" Type="Self.tbl_27_Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_26_Pigments" Type="Self.tbl_26_Pigments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_27_Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="tbl_26_Pigments">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_33_O_HAS_32_33_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_33_ObjectsPhoto" Type="Self.tbl_33_ObjectsPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_33_ObjectsPhoto">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_34_P_HAS_32_35_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_34_Peak" Type="Self.tbl_34_Peak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_34_Peak">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_9_SP_HAS_32_9_TBL_32_F">
+          <End Role="tbl_32_FocusSection" Type="Self.tbl_32_FocusSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_9_SpektrumLinesChE" Type="Self.tbl_9_SpektrumLinesChE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_32_FocusSection">
+              <PropertyRef Name="FocusSectionId" />
+            </Principal>
+            <Dependent Role="tbl_9_SpektrumLinesChE">
+              <PropertyRef Name="FocusSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_38_O_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_38_OtherMaterials" Type="Self.tbl_38_OtherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_38_OtherMaterials">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_39_M_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_39_Metals" Type="Self.tbl_39_Metals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_39_Metals">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_40_P_COMPOSED__TBL_37_M">
+          <End Role="tbl_37_Material" Type="Self.tbl_37_Material" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_40_Paints" Type="Self.tbl_40_Paints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_37_Material">
+              <PropertyRef Name="MaterialId" />
+            </Principal>
+            <Dependent Role="tbl_40_Paints">
+              <PropertyRef Name="MaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBArtWorkContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_1_User" EntityType="Self.tbl_1_User" />
+          <EntitySet Name="tbl_10_ChemicalElement" EntityType="Self.tbl_10_ChemicalElement" />
+          <EntitySet Name="tbl_11_AuthorPictures" EntityType="Self.tbl_11_AuthorPictures" />
+          <EntitySet Name="tbl_12_GeografyPlace" EntityType="Self.tbl_12_GeografyPlace" />
+          <EntitySet Name="tbl_13_HistoryPeriod" EntityType="Self.tbl_13_HistoryPeriod" />
+          <EntitySet Name="tbl_14_ArtWork" EntityType="Self.tbl_14_ArtWork" />
+          <EntitySet Name="tbl_15_Country" EntityType="Self.tbl_15_Country" />
+          <EntitySet Name="tbl_16_FotoPictures" EntityType="Self.tbl_16_FotoPictures" />
+          <EntitySet Name="tbl_17_PassportResearch" EntityType="Self.tbl_17_PassportResearch" />
+          <EntitySet Name="tbl_18_RemarkOfDate" EntityType="Self.tbl_18_RemarkOfDate" />
+          <EntitySet Name="tbl_19_DateOfCreated" EntityType="Self.tbl_19_DateOfCreated" />
+          <EntitySet Name="tbl_2_Roles" EntityType="Self.tbl_2_Roles" />
+          <EntitySet Name="tbl_20_InstrumentalMethods" EntityType="Self.tbl_20_InstrumentalMethods" />
+          <EntitySet Name="tbl_21_SpectrumLine" EntityType="Self.tbl_21_SpectrumLine" />
+          <EntitySet Name="tbl_22_Spektr" EntityType="Self.tbl_22_Spektr" />
+          <EntitySet Name="tbl_23_StatesOfMatter_ChE" EntityType="Self.tbl_23_StatesOfMatter_ChE" />
+          <EntitySet Name="tbl_24_CrystalStructuresChE" EntityType="Self.tbl_24_CrystalStructuresChE" />
+          <EntitySet Name="tbl_25_Isotop_ChE" EntityType="Self.tbl_25_Isotop_ChE" />
+          <EntitySet Name="tbl_26_Pigments" EntityType="Self.tbl_26_Pigments" />
+          <EntitySet Name="tbl_27_Group" EntityType="Self.tbl_27_Group" />
+          <EntitySet Name="tbl_3_Privileges" EntityType="Self.tbl_3_Privileges" />
+          <EntitySet Name="tbl_30_AuthorType" EntityType="Self.tbl_30_AuthorType" />
+          <EntitySet Name="tbl_32_FocusSection" EntityType="Self.tbl_32_FocusSection" />
+          <EntitySet Name="tbl_33_ObjectsPhoto" EntityType="Self.tbl_33_ObjectsPhoto" />
+          <EntitySet Name="tbl_34_LibrarySpectrumLines" EntityType="Self.tbl_34_LibrarySpectrumLines" />
+          <EntitySet Name="tbl_34_Peak" EntityType="Self.tbl_34_Peak" />
+          <EntitySet Name="tbl_35_ArtWorkGenre" EntityType="Self.tbl_35_ArtWorkGenre" />
+          <EntitySet Name="tbl_36_Technics" EntityType="Self.tbl_36_Technics" />
+          <EntitySet Name="tbl_37_Material" EntityType="Self.tbl_37_Material" />
+          <EntitySet Name="tbl_38_OtherMaterials" EntityType="Self.tbl_38_OtherMaterials" />
+          <EntitySet Name="tbl_39_Metals" EntityType="Self.tbl_39_Metals" />
+          <EntitySet Name="tbl_40_Paints" EntityType="Self.tbl_40_Paints" />
+          <EntitySet Name="tbl_5_Organization" EntityType="Self.tbl_5_Organization" />
+          <EntitySet Name="tbl_6_City" EntityType="Self.tbl_6_City" />
+          <EntitySet Name="tbl_9_SpektrumLinesChE" EntityType="Self.tbl_9_SpektrumLinesChE" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+          <AssociationSet Name="FK_TBL_1_US_BELONGS_5_TBL_5_OR" Association="Self.FK_TBL_1_US_BELONGS_5_TBL_5_OR">
+            <End Role="tbl_5_Organization" EntitySet="tbl_5_Organization" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_1_US_HAS_3_1_TBL_3_PR" Association="Self.FK_TBL_1_US_HAS_3_1_TBL_3_PR">
+            <End Role="tbl_3_Privileges" EntitySet="tbl_3_Privileges" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_1_US_LIVE_6_4_TBL_6_CI" Association="Self.FK_TBL_1_US_LIVE_6_4_TBL_6_CI">
+            <End Role="tbl_6_City" EntitySet="tbl_6_City" />
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_32_F_CONDUCTS__TBL_1_US" Association="Self.FK_TBL_32_F_CONDUCTS__TBL_1_US">
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_HAS_2_2_TBL_1_US" Association="Self.FK_USERROLE_HAS_2_2_TBL_1_US">
+            <End Role="tbl_1_User" EntitySet="tbl_1_User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_10_C_HAS_24_10_TBL_24_C" Association="Self.FK_TBL_10_C_HAS_24_10_TBL_24_C">
+            <End Role="tbl_24_CrystalStructuresChE" EntitySet="tbl_24_CrystalStructuresChE" />
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_HAS_10_22_TBL_10_C" Association="Self.FK_TBL_22_S_HAS_10_22_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_23_S_HAS_10_23_TBL_10_C" Association="Self.FK_TBL_23_S_HAS_10_23_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_23_StatesOfMatter_ChE" EntitySet="tbl_23_StatesOfMatter_ChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_25_I_HAS_10_25_TBL_10_C" Association="Self.FK_TBL_25_I_HAS_10_25_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_25_Isotop_ChE" EntitySet="tbl_25_Isotop_ChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_9_SP_MATCHES_1_TBL_10_C" Association="Self.FK_TBL_9_SP_MATCHES_1_TBL_10_C">
+            <End Role="tbl_10_ChemicalElement" EntitySet="tbl_10_ChemicalElement" />
+            <End Role="tbl_9_SpektrumLinesChE" EntitySet="tbl_9_SpektrumLinesChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_CONTAINS__TBL_12_G" Association="Self.FK_TBL_11_A_CONTAINS__TBL_12_G">
+            <End Role="tbl_12_GeografyPlace" EntitySet="tbl_12_GeografyPlace" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_HAS_30_11_TBL_30_A" Association="Self.FK_TBL_11_A_HAS_30_11_TBL_30_A">
+            <End Role="tbl_30_AuthorType" EntitySet="tbl_30_AuthorType" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_11_A_INCLUDE_1_TBL_13_H" Association="Self.FK_TBL_11_A_INCLUDE_1_TBL_13_H">
+            <End Role="tbl_13_HistoryPeriod" EntitySet="tbl_13_HistoryPeriod" />
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_HAS_11_14_TBL_11_A" Association="Self.FK_TBL_14_A_HAS_11_14_TBL_11_A">
+            <End Role="tbl_11_AuthorPictures" EntitySet="tbl_11_AuthorPictures" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_12_G_LOCATED_1_TBL_15_C" Association="Self.FK_TBL_12_G_LOCATED_1_TBL_15_C">
+            <End Role="tbl_15_Country" EntitySet="tbl_15_Country" />
+            <End Role="tbl_12_GeografyPlace" EntitySet="tbl_12_GeografyPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_HAS_36_14_TBL_36_T" Association="Self.FK_TBL_14_A_HAS_36_14_TBL_36_T">
+            <End Role="tbl_36_Technics" EntitySet="tbl_36_Technics" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_14_A_PAINT_37__TBL_37_M" Association="Self.FK_TBL_14_A_PAINT_37__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_16_F_HAS_14_16_TBL_14_A" Association="Self.FK_TBL_16_F_HAS_14_16_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_16_FotoPictures" EntitySet="tbl_16_FotoPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_17_P_HAS_14_17_TBL_14_A" Association="Self.FK_TBL_17_P_HAS_14_17_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_17_PassportResearch" EntitySet="tbl_17_PassportResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_18_R_CONTAIN_1_TBL_14_A" Association="Self.FK_TBL_18_R_CONTAIN_1_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_18_RemarkOfDate" EntitySet="tbl_18_RemarkOfDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_32_F_INCLUDE_1_TBL_14_A" Association="Self.FK_TBL_32_F_INCLUDE_1_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_35_A_HAS_14_35_TBL_14_A" Association="Self.FK_TBL_35_A_HAS_14_35_TBL_14_A">
+            <End Role="tbl_14_ArtWork" EntitySet="tbl_14_ArtWork" />
+            <End Role="tbl_35_ArtWorkGenre" EntitySet="tbl_35_ArtWorkGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_17_P_INCLUDE_2_TBL_20_I" Association="Self.FK_TBL_17_P_INCLUDE_2_TBL_20_I">
+            <End Role="tbl_20_InstrumentalMethods" EntitySet="tbl_20_InstrumentalMethods" />
+            <End Role="tbl_17_PassportResearch" EntitySet="tbl_17_PassportResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_18_R_HAVE_19_1_TBL_19_D" Association="Self.FK_TBL_18_R_HAVE_19_1_TBL_19_D">
+            <End Role="tbl_19_DateOfCreated" EntitySet="tbl_19_DateOfCreated" />
+            <End Role="tbl_18_RemarkOfDate" EntitySet="tbl_18_RemarkOfDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_HAS_2_1_TBL_2_RO" Association="Self.FK_USERROLE_HAS_2_1_TBL_2_RO">
+            <End Role="tbl_2_Roles" EntitySet="tbl_2_Roles" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_21_S_CONTAINS__TBL_34_L" Association="Self.FK_TBL_21_S_CONTAINS__TBL_34_L">
+            <End Role="tbl_34_LibrarySpectrumLines" EntitySet="tbl_34_LibrarySpectrumLines" />
+            <End Role="tbl_21_SpectrumLine" EntitySet="tbl_21_SpectrumLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_CONTAINS__TBL_21_S" Association="Self.FK_TBL_22_S_CONTAINS__TBL_21_S">
+            <End Role="tbl_21_SpectrumLine" EntitySet="tbl_21_SpectrumLine" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_HAS_47_22_TBL_37_M" Association="Self.FK_TBL_22_S_HAS_47_22_TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_22_S_INCLUDE_2_TBL_32_F" Association="Self.FK_TBL_22_S_INCLUDE_2_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_22_Spektr" EntitySet="tbl_22_Spektr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_26_P_HAS_40_26_TBL_40_P" Association="Self.FK_TBL_26_P_HAS_40_26_TBL_40_P">
+            <End Role="tbl_40_Paints" EntitySet="tbl_40_Paints" />
+            <End Role="tbl_26_Pigments" EntitySet="tbl_26_Pigments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_26_P_HAVE_27_2_TBL_27_G" Association="Self.FK_TBL_26_P_HAVE_27_2_TBL_27_G">
+            <End Role="tbl_27_Group" EntitySet="tbl_27_Group" />
+            <End Role="tbl_26_Pigments" EntitySet="tbl_26_Pigments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_33_O_HAS_32_33_TBL_32_F" Association="Self.FK_TBL_33_O_HAS_32_33_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_33_ObjectsPhoto" EntitySet="tbl_33_ObjectsPhoto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_34_P_HAS_32_35_TBL_32_F" Association="Self.FK_TBL_34_P_HAS_32_35_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_34_Peak" EntitySet="tbl_34_Peak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_9_SP_HAS_32_9_TBL_32_F" Association="Self.FK_TBL_9_SP_HAS_32_9_TBL_32_F">
+            <End Role="tbl_32_FocusSection" EntitySet="tbl_32_FocusSection" />
+            <End Role="tbl_9_SpektrumLinesChE" EntitySet="tbl_9_SpektrumLinesChE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_38_O_COMPOSED__TBL_37_M" Association="Self.FK_TBL_38_O_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_38_OtherMaterials" EntitySet="tbl_38_OtherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_39_M_COMPOSED__TBL_37_M" Association="Self.FK_TBL_39_M_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_39_Metals" EntitySet="tbl_39_Metals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_40_P_COMPOSED__TBL_37_M" Association="Self.FK_TBL_40_P_COMPOSED__TBL_37_M">
+            <End Role="tbl_37_Material" EntitySet="tbl_37_Material" />
+            <End Role="tbl_40_Paints" EntitySet="tbl_40_Paints" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBArtWorkRC6ModelStoreContainer" CdmEntityContainer="DBArtWorkContext">
+          <EntitySetMapping Name="tbl_1_User">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_1_User">
+              <MappingFragment StoreEntitySet="tbl_1_User">
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+                <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+                <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+                <ScalarProperty Name="UserMiddleName" ColumnName="UserMiddleName" />
+                <ScalarProperty Name="UserPhoneNumber" ColumnName="UserPhoneNumber" />
+                <ScalarProperty Name="UserMobilePhoneNumber" ColumnName="UserMobilePhoneNumber" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+                <ScalarProperty Name="ActivatedLink" ColumnName="ActivatedLink" />
+                <ScalarProperty Name="LastVisitDate" ColumnName="LastVisitDate" />
+                <ScalarProperty Name="AvatarPath" ColumnName="AvatarPath" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_10_ChemicalElement">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_10_ChemicalElement">
+              <MappingFragment StoreEntitySet="tbl_10_ChemicalElement">
+                <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+                <ScalarProperty Name="CrystalStructureId" ColumnName="CrystalStructureId" />
+                <ScalarProperty Name="ChemicalElementName" ColumnName="ChemicalElementName" />
+                <ScalarProperty Name="ChemicalElementDescription" ColumnName="ChemicalElementDescription" />
+                <ScalarProperty Name="ChemicalElementAtomicNumber" ColumnName="ChemicalElementAtomicNumber" />
+                <ScalarProperty Name="ChemicalElementAtomicWeight" ColumnName="ChemicalElementAtomicWeight" />
+                <ScalarProperty Name="ChemicalElementCore" ColumnName="ChemicalElementCore" />
+                <ScalarProperty Name="ChemicalElementIons" ColumnName="ChemicalElementIons" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_11_AuthorPictures">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_11_AuthorPictures">
+              <MappingFragment StoreEntitySet="tbl_11_AuthorPictures">
+                <ScalarProperty Name="AuthorPicturesId" ColumnName="AuthorPicturesId" />
+                <ScalarProperty Name="GeografyPlaceId" ColumnName="GeografyPlaceId" />
+                <ScalarProperty Name="HistoryPeriodId" ColumnName="HistoryPeriodId" />
+                <ScalarProperty Name="AuthorTypeId" ColumnName="AuthorTypeId" />
+                <ScalarProperty Name="AuthorFirstName" ColumnName="AuthorFirstName" />
+                <ScalarProperty Name="AuthorLastName" ColumnName="AuthorLastName" />
+                <ScalarProperty Name="AuthorMiddleName" ColumnName="AuthorMiddleName" />
+                <ScalarProperty Name="AuthorDate_of_birth" ColumnName="AuthorDate_of_birth" />
+                <ScalarProperty Name="AuthorOtherDates" ColumnName="AuthorOtherDates" />
+                <ScalarProperty Name="AuthorBiography" ColumnName="AuthorBiography" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_12_GeografyPlace">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_12_GeografyPlace">
+              <MappingFragment StoreEntitySet="tbl_12_GeografyPlace">
+                <ScalarProperty Name="GeografyPlaceId" ColumnName="GeografyPlaceId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="GeografyPlaceCity" ColumnName="GeografyPlaceCity" />
+                <ScalarProperty Name="Administrative_District_1" ColumnName="Administrative_District_1" />
+                <ScalarProperty Name="Administrative_District_2" ColumnName="Administrative_District_2" />
+                <ScalarProperty Name="Administrative_District_3" ColumnName="Administrative_District_3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_13_HistoryPeriod">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_13_HistoryPeriod">
+              <MappingFragment StoreEntitySet="tbl_13_HistoryPeriod">
+                <ScalarProperty Name="HistoryPeriodId" ColumnName="HistoryPeriodId" />
+                <ScalarProperty Name="HistoryPeriodName" ColumnName="HistoryPeriodName" />
+                <ScalarProperty Name="HistoryPeriodIdDescription" ColumnName="HistoryPeriodIdDescription" />
+                <ScalarProperty Name="HistoryPeriodIdDates" ColumnName="HistoryPeriodIdDates" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_14_ArtWork">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_14_ArtWork">
+              <MappingFragment StoreEntitySet="tbl_14_ArtWork">
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="AuthorPicturesId" ColumnName="AuthorPicturesId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="TechnicsId" ColumnName="TechnicsId" />
+                <ScalarProperty Name="ArtWorkName" ColumnName="ArtWorkName" />
+                <ScalarProperty Name="ArtWorkOriginalName" ColumnName="ArtWorkOriginalName" />
+                <ScalarProperty Name="ArtWorkLocation" ColumnName="ArtWorkLocation" />
+                <ScalarProperty Name="ArtWorkSize" ColumnName="ArtWorkSize" />
+                <ScalarProperty Name="ArtWorkDateResearch" ColumnName="ArtWorkDateResearch" />
+                <ScalarProperty Name="ArtWorkAimResearch" ColumnName="ArtWorkAimResearch" />
+                <ScalarProperty Name="ArtWorkAuthor" ColumnName="ArtWorkAuthor" />
+                <ScalarProperty Name="ArtWorkAuthor_lang" ColumnName="ArtWorkAuthor_lang" />
+                <ScalarProperty Name="ArtWorkConclusionNumber" ColumnName="ArtWorkConclusionNumber" />
+                <ScalarProperty Name="ArtWorkCreationDate" ColumnName="ArtWorkCreationDate" />
+                <ScalarProperty Name="ArtWorkStatus" ColumnName="ArtWorkStatus" />
+                <ScalarProperty Name="ArtWorkDescription" ColumnName="ArtWorkDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_15_Country">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_15_Country">
+              <MappingFragment StoreEntitySet="tbl_15_Country">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_16_FotoPictures">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_16_FotoPictures">
+              <MappingFragment StoreEntitySet="tbl_16_FotoPictures">
+                <ScalarProperty Name="FotoPicturesId" ColumnName="FotoPicturesId" />
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="FotoPictures" ColumnName="FotoPictures" />
+                <ScalarProperty Name="FotoPicturesObjects" ColumnName="FotoPicturesObjects" />
+                <ScalarProperty Name="FotoPicturesColors" ColumnName="FotoPicturesColors" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_17_PassportResearch">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_17_PassportResearch">
+              <MappingFragment StoreEntitySet="tbl_17_PassportResearch">
+                <ScalarProperty Name="PassportResearchId" ColumnName="PassportResearchId" />
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="InstrumentalMethodsId" ColumnName="InstrumentalMethodsId" />
+                <ScalarProperty Name="Conclusion_the_method" ColumnName="Conclusion_the_method" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_18_RemarkOfDate">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_18_RemarkOfDate">
+              <MappingFragment StoreEntitySet="tbl_18_RemarkOfDate">
+                <ScalarProperty Name="RemarkOfDateId" ColumnName="RemarkOfDateId" />
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="DateOfCreatedId" ColumnName="DateOfCreatedId" />
+                <ScalarProperty Name="RemarkOfDateCreate" ColumnName="RemarkOfDateCreate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_19_DateOfCreated">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_19_DateOfCreated">
+              <MappingFragment StoreEntitySet="tbl_19_DateOfCreated">
+                <ScalarProperty Name="DateOfCreatedId" ColumnName="DateOfCreatedId" />
+                <ScalarProperty Name="DateOfCreated" ColumnName="DateOfCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_2_Roles">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_2_Roles">
+              <MappingFragment StoreEntitySet="tbl_2_Roles">
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_20_InstrumentalMethods">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_20_InstrumentalMethods">
+              <MappingFragment StoreEntitySet="tbl_20_InstrumentalMethods">
+                <ScalarProperty Name="InstrumentalMethodsId" ColumnName="InstrumentalMethodsId" />
+                <ScalarProperty Name="InstrumentalMethodsName" ColumnName="InstrumentalMethodsName" />
+                <ScalarProperty Name="InstrumentalMethodsDescription" ColumnName="InstrumentalMethodsDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_21_SpectrumLine">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_21_SpectrumLine">
+              <MappingFragment StoreEntitySet="tbl_21_SpectrumLine">
+                <ScalarProperty Name="SpectrumLineId" ColumnName="SpectrumLineId" />
+                <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+                <ScalarProperty Name="SpectrumLineDate" ColumnName="SpectrumLineDate" />
+                <ScalarProperty Name="SpectrumLinePersonName" ColumnName="SpectrumLinePersonName" />
+                <ScalarProperty Name="SpectrumLineWavelLength" ColumnName="SpectrumLineWavelLength" />
+                <ScalarProperty Name="OtherOptions" ColumnName="OtherOptions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_22_Spektr">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_22_Spektr">
+              <MappingFragment StoreEntitySet="tbl_22_Spektr">
+                <ScalarProperty Name="SpektrId" ColumnName="SpektrId" />
+                <ScalarProperty Name="SpectrumLineId" ColumnName="SpectrumLineId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+                <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+                <ScalarProperty Name="SpektrWaveLenght" ColumnName="SpektrWaveLenght" />
+                <ScalarProperty Name="LineDescription" ColumnName="LineDescription" />
+                <ScalarProperty Name="SpektrsBase" ColumnName="SpektrsBase" />
+                <ScalarProperty Name="SpektrIntensity" ColumnName="SpektrIntensity" />
+                <ScalarProperty Name="PeakArea" ColumnName="PeakArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_23_StatesOfMatter_ChE">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_23_StatesOfMatter_ChE">
+              <MappingFragment StoreEntitySet="tbl_23_StatesOfMatter_ChE">
+                <ScalarProperty Name="StatesOfMatterId" ColumnName="StatesOfMatterId" />
+                <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+                <ScalarProperty Name="StatesOfMatterIdDescription" ColumnName="StatesOfMatterIdDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_24_CrystalStructuresChE">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_24_CrystalStructuresChE">
+              <MappingFragment StoreEntitySet="tbl_24_CrystalStructuresChE">
+                <ScalarProperty Name="CrystalStructureId" ColumnName="CrystalStructureId" />
+                <ScalarProperty Name="CrystalStructureDescription" ColumnName="CrystalStructureDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_25_Isotop_ChE">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_25_Isotop_ChE">
+              <MappingFragment StoreEntitySet="tbl_25_Isotop_ChE">
+                <ScalarProperty Name="IsotopId" ColumnName="IsotopId" />
+                <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+                <ScalarProperty Name="IsotopMassValue" ColumnName="IsotopMassValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_26_Pigments">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_26_Pigments">
+              <MappingFragment StoreEntitySet="tbl_26_Pigments">
+                <ScalarProperty Name="PigmentsId" ColumnName="PigmentsId" />
+                <ScalarProperty Name="PaintId" ColumnName="PaintId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="PigmentColor" ColumnName="PigmentColor" />
+                <ScalarProperty Name="PigmentChemicalFormula" ColumnName="PigmentChemicalFormula" />
+                <ScalarProperty Name="PigmentYearUsed" ColumnName="PigmentYearUsed" />
+                <ScalarProperty Name="PigmentWhereUsed" ColumnName="PigmentWhereUsed" />
+                <ScalarProperty Name="PigmentLiterature" ColumnName="PigmentLiterature" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_27_Group">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_27_Group">
+              <MappingFragment StoreEntitySet="tbl_27_Group">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_3_Privileges">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_3_Privileges">
+              <MappingFragment StoreEntitySet="tbl_3_Privileges">
+                <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+                <ScalarProperty Name="Privilege" ColumnName="Privilege" />
+                <ScalarProperty Name="PrivilegeDescription" ColumnName="PrivilegeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_30_AuthorType">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_30_AuthorType">
+              <MappingFragment StoreEntitySet="tbl_30_AuthorType">
+                <ScalarProperty Name="AuthorTypeId" ColumnName="AuthorTypeId" />
+                <ScalarProperty Name="AuthorTypeName" ColumnName="AuthorTypeName" />
+                <ScalarProperty Name="AuthorSubTypeName" ColumnName="AuthorSubTypeName" />
+                <ScalarProperty Name="AuthorParentType" ColumnName="AuthorParentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_32_FocusSection">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_32_FocusSection">
+              <MappingFragment StoreEntitySet="tbl_32_FocusSection">
+                <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="FocusSectionName" ColumnName="FocusSectionName" />
+                <ScalarProperty Name="FocusSectionDate" ColumnName="FocusSectionDate" />
+                <ScalarProperty Name="FocusSectionTime" ColumnName="FocusSectionTime" />
+                <ScalarProperty Name="FocusSectionSpektrFile" ColumnName="FocusSectionSpektrFile" />
+                <ScalarProperty Name="FocusSectionReportFile" ColumnName="FocusSectionReportFile" />
+                <ScalarProperty Name="LabelFocus" ColumnName="LabelFocus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_33_ObjectsPhoto">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_33_ObjectsPhoto">
+              <MappingFragment StoreEntitySet="tbl_33_ObjectsPhoto">
+                <ScalarProperty Name="ObjectsPhotoId" ColumnName="ObjectsPhotoId" />
+                <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+                <ScalarProperty Name="ObjectsPhotoFile" ColumnName="ObjectsPhotoFile" />
+                <ScalarProperty Name="ObjectsPhotoDate" ColumnName="ObjectsPhotoDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_34_LibrarySpectrumLines">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_34_LibrarySpectrumLines">
+              <MappingFragment StoreEntitySet="tbl_34_LibrarySpectrumLines">
+                <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+                <ScalarProperty Name="LibraryName" ColumnName="LibraryName" />
+                <ScalarProperty Name="LibraryCooment" ColumnName="LibraryCooment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_34_Peak">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_34_Peak">
+              <MappingFragment StoreEntitySet="tbl_34_Peak">
+                <ScalarProperty Name="PeakId" ColumnName="PeakId" />
+                <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+                <ScalarProperty Name="WaveLenghtPeak" ColumnName="WaveLenghtPeak" />
+                <ScalarProperty Name="IntensityPeak" ColumnName="IntensityPeak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_35_ArtWorkGenre">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_35_ArtWorkGenre">
+              <MappingFragment StoreEntitySet="tbl_35_ArtWorkGenre">
+                <ScalarProperty Name="ArtWorkGenreId" ColumnName="ArtWorkGenreId" />
+                <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+                <ScalarProperty Name="ArtWorkGenreName" ColumnName="ArtWorkGenreName" />
+                <ScalarProperty Name="ArtWorkGenreDescription" ColumnName="ArtWorkGenreDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_36_Technics">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_36_Technics">
+              <MappingFragment StoreEntitySet="tbl_36_Technics">
+                <ScalarProperty Name="TechnicsId" ColumnName="TechnicsId" />
+                <ScalarProperty Name="TechnicsName" ColumnName="TechnicsName" />
+                <ScalarProperty Name="TechnicsRemark" ColumnName="TechnicsRemark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_37_Material">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_37_Material">
+              <MappingFragment StoreEntitySet="tbl_37_Material">
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_38_OtherMaterials">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_38_OtherMaterials">
+              <MappingFragment StoreEntitySet="tbl_38_OtherMaterials">
+                <ScalarProperty Name="OtherMaterialId" ColumnName="OtherMaterialId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="OtherMaterialName" ColumnName="OtherMaterialName" />
+                <ScalarProperty Name="OtherMateriaRemark" ColumnName="OtherMateriaRemark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_39_Metals">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_39_Metals">
+              <MappingFragment StoreEntitySet="tbl_39_Metals">
+                <ScalarProperty Name="MetalId" ColumnName="MetalId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="MetalName" ColumnName="MetalName" />
+                <ScalarProperty Name="MetalRemark" ColumnName="MetalRemark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_40_Paints">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_40_Paints">
+              <MappingFragment StoreEntitySet="tbl_40_Paints">
+                <ScalarProperty Name="PaintId" ColumnName="PaintId" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="PaintName" ColumnName="PaintName" />
+                <ScalarProperty Name="PaintRemark" ColumnName="PaintRemark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_5_Organization">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_5_Organization">
+              <MappingFragment StoreEntitySet="tbl_5_Organization">
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+                <ScalarProperty Name="OrganizationStatus" ColumnName="OrganizationStatus" />
+                <ScalarProperty Name="OrganizationType" ColumnName="OrganizationType" />
+                <ScalarProperty Name="OrganizationDescription" ColumnName="OrganizationDescription" />
+                <ScalarProperty Name="OrganizationAdress" ColumnName="OrganizationAdress" />
+                <ScalarProperty Name="OrganizationEmail" ColumnName="OrganizationEmail" />
+                <ScalarProperty Name="OrganizationPhoneNumbe" ColumnName="OrganizationPhoneNumbe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_6_City">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_6_City">
+              <MappingFragment StoreEntitySet="tbl_6_City">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="UserCity" ColumnName="UserCity" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="AdministrativeDevision" ColumnName="AdministrativeDevision" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_9_SpektrumLinesChE">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_9_SpektrumLinesChE">
+              <MappingFragment StoreEntitySet="tbl_9_SpektrumLinesChE">
+                <ScalarProperty Name="SpektrumLineChEId" ColumnName="SpektrumLineChEId" />
+                <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+                <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+                <ScalarProperty Name="SpektrumLineChEWavelength" ColumnName="SpektrumLineChEWavelength" />
+                <ScalarProperty Name="SpektrumLineChEIntensity" ColumnName="SpektrumLineChEIntensity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="DBArtWorkRC6Model.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="IDUserRole" ColumnName="IDUserRole" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

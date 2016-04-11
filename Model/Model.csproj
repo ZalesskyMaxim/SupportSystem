@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC39AD8A-326B-4E91-A26E-879BE8395A33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBModel\DBArtWorkModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBArtWorkModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DBArtWorkModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DBArtWorkModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBArtWorkModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_10_ChemicalElement.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_11_AuthorPictures.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_12_GeografyPlace.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_13_HistoryPeriod.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_14_ArtWork.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_15_Country.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_16_FotoPictures.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_17_PassportResearch.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_18_RemarkOfDate.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_19_DateOfCreated.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_1_User.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_20_InstrumentalMethods.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_21_SpectrumLine.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_22_Spektr.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_23_StatesOfMatter_ChE.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_24_CrystalStructuresChE.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_25_Isotop_ChE.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_26_Pigments.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_27_Group.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_2_Roles.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_30_AuthorType.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_32_FocusSection.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_33_ObjectsPhoto.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_34_LibrarySpectrumLines.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_34_Peak.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_35_ArtWorkGenre.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_36_Technics.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_37_Material.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_38_OtherMaterials.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_39_Metals.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_3_Privileges.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_40_Paints.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_5_Organization.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_6_City.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\tbl_9_SpektrumLinesChE.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\UserRole.cs">
+      <DependentUpon>DBArtWorkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserRepository\IRepository.cs" />
+    <Compile Include="Users\UserRepository\Proxy\User.cs" />
+    <Compile Include="Users\UserRepository\SqlRepository.cs" />
+    <Compile Include="Users\UserRepository\UsersModels\Role.cs" />
+    <Compile Include="Users\UserRepository\UsersModels\User.cs" />
+    <Compile Include="Users\UserRepository\UsersModels\UserRole.cs" />
+    <Compile Include="Users\UsersModel\UsersModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersModel.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DBModel\DBArtWorkModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBArtWorkModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBModel\DBArtWorkModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBArtWorkModel.edmx</DependentUpon>
+      <LastGenOutput>DBArtWorkModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DBModel\DBArtWorkModel.edmx.diagram">
+      <DependentUpon>DBArtWorkModel.edmx</DependentUpon>
+    </None>
+    <None Include="DBModel\DBArtWorkModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBArtWorkModel.edmx</DependentUpon>
+      <LastGenOutput>DBArtWorkModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Users\UsersModel\UsersModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>UsersModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Users\UsersModel\UsersModel.dbml.layout">
+      <DependentUpon>UsersModel.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

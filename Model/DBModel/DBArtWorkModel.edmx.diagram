@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d3db831c958842a1b2ce437ab845a355" Name="Diagram1">
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_1_User" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_10_ChemicalElement" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_11_AuthorPictures" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_12_GeografyPlace" Width="1.5" PointX="1.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_13_HistoryPeriod" Width="1.5" PointX="1.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_14_ArtWork" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_15_Country" Width="1.5" PointX="1.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_16_FotoPictures" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_17_PassportResearch" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_18_RemarkOfDate" Width="1.5" PointX="8.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_19_DateOfCreated" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_2_Roles" Width="1.5" PointX="6" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_20_InstrumentalMethods" Width="1.5" PointX="3" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_21_SpectrumLine" Width="1.5" PointX="8.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_22_Spektr" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_23_StatesOfMatter_ChE" Width="1.5" PointX="10.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_24_CrystalStructuresChE" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_25_Isotop_ChE" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_26_Pigments" Width="1.5" PointX="5.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_27_Group" Width="1.5" PointX="3" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_3_Privileges" Width="1.5" PointX="3.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_30_AuthorType" Width="1.5" PointX="1.5" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_32_FocusSection" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_33_ObjectsPhoto" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_34_LibrarySpectrumLines" Width="1.5" PointX="6" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_34_Peak" Width="1.5" PointX="10.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_35_ArtWorkGenre" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_36_Technics" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_37_Material" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_38_OtherMaterials" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_39_Metals" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_40_Paints" Width="1.5" PointX="3" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_5_Organization" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_6_City" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.tbl_9_SpektrumLinesChE" Width="1.5" PointX="13.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBArtWorkRC6Model.UserRole" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_1_US_BELONGS_5_TBL_5_OR" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_1_US_HAS_3_1_TBL_3_PR" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_1_US_LIVE_6_4_TBL_6_CI" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_32_F_CONDUCTS__TBL_1_US" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_USERROLE_HAS_2_2_TBL_1_US" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_10_C_HAS_24_10_TBL_24_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_22_S_HAS_10_22_TBL_10_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_23_S_HAS_10_23_TBL_10_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_25_I_HAS_10_25_TBL_10_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_9_SP_MATCHES_1_TBL_10_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_11_A_CONTAINS__TBL_12_G" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_11_A_HAS_30_11_TBL_30_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_11_A_INCLUDE_1_TBL_13_H" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_14_A_HAS_11_14_TBL_11_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_12_G_LOCATED_1_TBL_15_C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_14_A_HAS_36_14_TBL_36_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_14_A_PAINT_37__TBL_37_M" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_16_F_HAS_14_16_TBL_14_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_17_P_HAS_14_17_TBL_14_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_18_R_CONTAIN_1_TBL_14_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_32_F_INCLUDE_1_TBL_14_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_35_A_HAS_14_35_TBL_14_A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_17_P_INCLUDE_2_TBL_20_I" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_18_R_HAVE_19_1_TBL_19_D" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_USERROLE_HAS_2_1_TBL_2_RO" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_21_S_CONTAINS__TBL_34_L" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_22_S_CONTAINS__TBL_21_S" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_22_S_HAS_47_22_TBL_37_M" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_22_S_INCLUDE_2_TBL_32_F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_26_P_HAS_40_26_TBL_40_P" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_26_P_HAVE_27_2_TBL_27_G" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_33_O_HAS_32_33_TBL_32_F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_34_P_HAS_32_35_TBL_32_F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_9_SP_HAS_32_9_TBL_32_F" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_38_O_COMPOSED__TBL_37_M" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_39_M_COMPOSED__TBL_37_M" ManuallyRouted="false" />
+        <AssociationConnector Association="DBArtWorkRC6Model.FK_TBL_40_P_COMPOSED__TBL_37_M" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

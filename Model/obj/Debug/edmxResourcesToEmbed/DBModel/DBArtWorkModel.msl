@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBArtWorkRC6ModelStoreContainer" CdmEntityContainer="DBArtWorkContext">
+    <EntitySetMapping Name="tbl_1_User">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_1_User">
+        <MappingFragment StoreEntitySet="tbl_1_User">
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+          <ScalarProperty Name="UserMiddleName" ColumnName="UserMiddleName" />
+          <ScalarProperty Name="UserPhoneNumber" ColumnName="UserPhoneNumber" />
+          <ScalarProperty Name="UserMobilePhoneNumber" ColumnName="UserMobilePhoneNumber" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+          <ScalarProperty Name="ActivatedLink" ColumnName="ActivatedLink" />
+          <ScalarProperty Name="LastVisitDate" ColumnName="LastVisitDate" />
+          <ScalarProperty Name="AvatarPath" ColumnName="AvatarPath" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_10_ChemicalElement">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_10_ChemicalElement">
+        <MappingFragment StoreEntitySet="tbl_10_ChemicalElement">
+          <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+          <ScalarProperty Name="CrystalStructureId" ColumnName="CrystalStructureId" />
+          <ScalarProperty Name="ChemicalElementName" ColumnName="ChemicalElementName" />
+          <ScalarProperty Name="ChemicalElementDescription" ColumnName="ChemicalElementDescription" />
+          <ScalarProperty Name="ChemicalElementAtomicNumber" ColumnName="ChemicalElementAtomicNumber" />
+          <ScalarProperty Name="ChemicalElementAtomicWeight" ColumnName="ChemicalElementAtomicWeight" />
+          <ScalarProperty Name="ChemicalElementCore" ColumnName="ChemicalElementCore" />
+          <ScalarProperty Name="ChemicalElementIons" ColumnName="ChemicalElementIons" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_11_AuthorPictures">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_11_AuthorPictures">
+        <MappingFragment StoreEntitySet="tbl_11_AuthorPictures">
+          <ScalarProperty Name="AuthorPicturesId" ColumnName="AuthorPicturesId" />
+          <ScalarProperty Name="GeografyPlaceId" ColumnName="GeografyPlaceId" />
+          <ScalarProperty Name="HistoryPeriodId" ColumnName="HistoryPeriodId" />
+          <ScalarProperty Name="AuthorTypeId" ColumnName="AuthorTypeId" />
+          <ScalarProperty Name="AuthorFirstName" ColumnName="AuthorFirstName" />
+          <ScalarProperty Name="AuthorLastName" ColumnName="AuthorLastName" />
+          <ScalarProperty Name="AuthorMiddleName" ColumnName="AuthorMiddleName" />
+          <ScalarProperty Name="AuthorDate_of_birth" ColumnName="AuthorDate_of_birth" />
+          <ScalarProperty Name="AuthorOtherDates" ColumnName="AuthorOtherDates" />
+          <ScalarProperty Name="AuthorBiography" ColumnName="AuthorBiography" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_12_GeografyPlace">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_12_GeografyPlace">
+        <MappingFragment StoreEntitySet="tbl_12_GeografyPlace">
+          <ScalarProperty Name="GeografyPlaceId" ColumnName="GeografyPlaceId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="GeografyPlaceCity" ColumnName="GeografyPlaceCity" />
+          <ScalarProperty Name="Administrative_District_1" ColumnName="Administrative_District_1" />
+          <ScalarProperty Name="Administrative_District_2" ColumnName="Administrative_District_2" />
+          <ScalarProperty Name="Administrative_District_3" ColumnName="Administrative_District_3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_13_HistoryPeriod">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_13_HistoryPeriod">
+        <MappingFragment StoreEntitySet="tbl_13_HistoryPeriod">
+          <ScalarProperty Name="HistoryPeriodId" ColumnName="HistoryPeriodId" />
+          <ScalarProperty Name="HistoryPeriodName" ColumnName="HistoryPeriodName" />
+          <ScalarProperty Name="HistoryPeriodIdDescription" ColumnName="HistoryPeriodIdDescription" />
+          <ScalarProperty Name="HistoryPeriodIdDates" ColumnName="HistoryPeriodIdDates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_14_ArtWork">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_14_ArtWork">
+        <MappingFragment StoreEntitySet="tbl_14_ArtWork">
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="AuthorPicturesId" ColumnName="AuthorPicturesId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="TechnicsId" ColumnName="TechnicsId" />
+          <ScalarProperty Name="ArtWorkName" ColumnName="ArtWorkName" />
+          <ScalarProperty Name="ArtWorkOriginalName" ColumnName="ArtWorkOriginalName" />
+          <ScalarProperty Name="ArtWorkLocation" ColumnName="ArtWorkLocation" />
+          <ScalarProperty Name="ArtWorkSize" ColumnName="ArtWorkSize" />
+          <ScalarProperty Name="ArtWorkDateResearch" ColumnName="ArtWorkDateResearch" />
+          <ScalarProperty Name="ArtWorkAimResearch" ColumnName="ArtWorkAimResearch" />
+          <ScalarProperty Name="ArtWorkAuthor" ColumnName="ArtWorkAuthor" />
+          <ScalarProperty Name="ArtWorkAuthor_lang" ColumnName="ArtWorkAuthor_lang" />
+          <ScalarProperty Name="ArtWorkConclusionNumber" ColumnName="ArtWorkConclusionNumber" />
+          <ScalarProperty Name="ArtWorkCreationDate" ColumnName="ArtWorkCreationDate" />
+          <ScalarProperty Name="ArtWorkStatus" ColumnName="ArtWorkStatus" />
+          <ScalarProperty Name="ArtWorkDescription" ColumnName="ArtWorkDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_15_Country">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_15_Country">
+        <MappingFragment StoreEntitySet="tbl_15_Country">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_16_FotoPictures">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_16_FotoPictures">
+        <MappingFragment StoreEntitySet="tbl_16_FotoPictures">
+          <ScalarProperty Name="FotoPicturesId" ColumnName="FotoPicturesId" />
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="FotoPictures" ColumnName="FotoPictures" />
+          <ScalarProperty Name="FotoPicturesObjects" ColumnName="FotoPicturesObjects" />
+          <ScalarProperty Name="FotoPicturesColors" ColumnName="FotoPicturesColors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_17_PassportResearch">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_17_PassportResearch">
+        <MappingFragment StoreEntitySet="tbl_17_PassportResearch">
+          <ScalarProperty Name="PassportResearchId" ColumnName="PassportResearchId" />
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="InstrumentalMethodsId" ColumnName="InstrumentalMethodsId" />
+          <ScalarProperty Name="Conclusion_the_method" ColumnName="Conclusion_the_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_18_RemarkOfDate">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_18_RemarkOfDate">
+        <MappingFragment StoreEntitySet="tbl_18_RemarkOfDate">
+          <ScalarProperty Name="RemarkOfDateId" ColumnName="RemarkOfDateId" />
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="DateOfCreatedId" ColumnName="DateOfCreatedId" />
+          <ScalarProperty Name="RemarkOfDateCreate" ColumnName="RemarkOfDateCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_19_DateOfCreated">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_19_DateOfCreated">
+        <MappingFragment StoreEntitySet="tbl_19_DateOfCreated">
+          <ScalarProperty Name="DateOfCreatedId" ColumnName="DateOfCreatedId" />
+          <ScalarProperty Name="DateOfCreated" ColumnName="DateOfCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_2_Roles">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_2_Roles">
+        <MappingFragment StoreEntitySet="tbl_2_Roles">
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_20_InstrumentalMethods">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_20_InstrumentalMethods">
+        <MappingFragment StoreEntitySet="tbl_20_InstrumentalMethods">
+          <ScalarProperty Name="InstrumentalMethodsId" ColumnName="InstrumentalMethodsId" />
+          <ScalarProperty Name="InstrumentalMethodsName" ColumnName="InstrumentalMethodsName" />
+          <ScalarProperty Name="InstrumentalMethodsDescription" ColumnName="InstrumentalMethodsDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_21_SpectrumLine">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_21_SpectrumLine">
+        <MappingFragment StoreEntitySet="tbl_21_SpectrumLine">
+          <ScalarProperty Name="SpectrumLineId" ColumnName="SpectrumLineId" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="SpectrumLineDate" ColumnName="SpectrumLineDate" />
+          <ScalarProperty Name="SpectrumLinePersonName" ColumnName="SpectrumLinePersonName" />
+          <ScalarProperty Name="SpectrumLineWavelLength" ColumnName="SpectrumLineWavelLength" />
+          <ScalarProperty Name="OtherOptions" ColumnName="OtherOptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_22_Spektr">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_22_Spektr">
+        <MappingFragment StoreEntitySet="tbl_22_Spektr">
+          <ScalarProperty Name="SpektrId" ColumnName="SpektrId" />
+          <ScalarProperty Name="SpectrumLineId" ColumnName="SpectrumLineId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+          <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+          <ScalarProperty Name="SpektrWaveLenght" ColumnName="SpektrWaveLenght" />
+          <ScalarProperty Name="LineDescription" ColumnName="LineDescription" />
+          <ScalarProperty Name="SpektrsBase" ColumnName="SpektrsBase" />
+          <ScalarProperty Name="SpektrIntensity" ColumnName="SpektrIntensity" />
+          <ScalarProperty Name="PeakArea" ColumnName="PeakArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_23_StatesOfMatter_ChE">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_23_StatesOfMatter_ChE">
+        <MappingFragment StoreEntitySet="tbl_23_StatesOfMatter_ChE">
+          <ScalarProperty Name="StatesOfMatterId" ColumnName="StatesOfMatterId" />
+          <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+          <ScalarProperty Name="StatesOfMatterIdDescription" ColumnName="StatesOfMatterIdDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_24_CrystalStructuresChE">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_24_CrystalStructuresChE">
+        <MappingFragment StoreEntitySet="tbl_24_CrystalStructuresChE">
+          <ScalarProperty Name="CrystalStructureId" ColumnName="CrystalStructureId" />
+          <ScalarProperty Name="CrystalStructureDescription" ColumnName="CrystalStructureDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_25_Isotop_ChE">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_25_Isotop_ChE">
+        <MappingFragment StoreEntitySet="tbl_25_Isotop_ChE">
+          <ScalarProperty Name="IsotopId" ColumnName="IsotopId" />
+          <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+          <ScalarProperty Name="IsotopMassValue" ColumnName="IsotopMassValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_26_Pigments">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_26_Pigments">
+        <MappingFragment StoreEntitySet="tbl_26_Pigments">
+          <ScalarProperty Name="PigmentsId" ColumnName="PigmentsId" />
+          <ScalarProperty Name="PaintId" ColumnName="PaintId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="PigmentColor" ColumnName="PigmentColor" />
+          <ScalarProperty Name="PigmentChemicalFormula" ColumnName="PigmentChemicalFormula" />
+          <ScalarProperty Name="PigmentYearUsed" ColumnName="PigmentYearUsed" />
+          <ScalarProperty Name="PigmentWhereUsed" ColumnName="PigmentWhereUsed" />
+          <ScalarProperty Name="PigmentLiterature" ColumnName="PigmentLiterature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_27_Group">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_27_Group">
+        <MappingFragment StoreEntitySet="tbl_27_Group">
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_3_Privileges">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_3_Privileges">
+        <MappingFragment StoreEntitySet="tbl_3_Privileges">
+          <ScalarProperty Name="PrivilegeId" ColumnName="PrivilegeId" />
+          <ScalarProperty Name="Privilege" ColumnName="Privilege" />
+          <ScalarProperty Name="PrivilegeDescription" ColumnName="PrivilegeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_30_AuthorType">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_30_AuthorType">
+        <MappingFragment StoreEntitySet="tbl_30_AuthorType">
+          <ScalarProperty Name="AuthorTypeId" ColumnName="AuthorTypeId" />
+          <ScalarProperty Name="AuthorTypeName" ColumnName="AuthorTypeName" />
+          <ScalarProperty Name="AuthorSubTypeName" ColumnName="AuthorSubTypeName" />
+          <ScalarProperty Name="AuthorParentType" ColumnName="AuthorParentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_32_FocusSection">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_32_FocusSection">
+        <MappingFragment StoreEntitySet="tbl_32_FocusSection">
+          <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="FocusSectionName" ColumnName="FocusSectionName" />
+          <ScalarProperty Name="FocusSectionDate" ColumnName="FocusSectionDate" />
+          <ScalarProperty Name="FocusSectionTime" ColumnName="FocusSectionTime" />
+          <ScalarProperty Name="FocusSectionSpektrFile" ColumnName="FocusSectionSpektrFile" />
+          <ScalarProperty Name="FocusSectionReportFile" ColumnName="FocusSectionReportFile" />
+          <ScalarProperty Name="LabelFocus" ColumnName="LabelFocus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_33_ObjectsPhoto">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_33_ObjectsPhoto">
+        <MappingFragment StoreEntitySet="tbl_33_ObjectsPhoto">
+          <ScalarProperty Name="ObjectsPhotoId" ColumnName="ObjectsPhotoId" />
+          <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+          <ScalarProperty Name="ObjectsPhotoFile" ColumnName="ObjectsPhotoFile" />
+          <ScalarProperty Name="ObjectsPhotoDate" ColumnName="ObjectsPhotoDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_34_LibrarySpectrumLines">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_34_LibrarySpectrumLines">
+        <MappingFragment StoreEntitySet="tbl_34_LibrarySpectrumLines">
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="LibraryName" ColumnName="LibraryName" />
+          <ScalarProperty Name="LibraryCooment" ColumnName="LibraryCooment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_34_Peak">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_34_Peak">
+        <MappingFragment StoreEntitySet="tbl_34_Peak">
+          <ScalarProperty Name="PeakId" ColumnName="PeakId" />
+          <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+          <ScalarProperty Name="WaveLenghtPeak" ColumnName="WaveLenghtPeak" />
+          <ScalarProperty Name="IntensityPeak" ColumnName="IntensityPeak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_35_ArtWorkGenre">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_35_ArtWorkGenre">
+        <MappingFragment StoreEntitySet="tbl_35_ArtWorkGenre">
+          <ScalarProperty Name="ArtWorkGenreId" ColumnName="ArtWorkGenreId" />
+          <ScalarProperty Name="ArtWorkId" ColumnName="ArtWorkId" />
+          <ScalarProperty Name="ArtWorkGenreName" ColumnName="ArtWorkGenreName" />
+          <ScalarProperty Name="ArtWorkGenreDescription" ColumnName="ArtWorkGenreDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_36_Technics">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_36_Technics">
+        <MappingFragment StoreEntitySet="tbl_36_Technics">
+          <ScalarProperty Name="TechnicsId" ColumnName="TechnicsId" />
+          <ScalarProperty Name="TechnicsName" ColumnName="TechnicsName" />
+          <ScalarProperty Name="TechnicsRemark" ColumnName="TechnicsRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_37_Material">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_37_Material">
+        <MappingFragment StoreEntitySet="tbl_37_Material">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_38_OtherMaterials">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_38_OtherMaterials">
+        <MappingFragment StoreEntitySet="tbl_38_OtherMaterials">
+          <ScalarProperty Name="OtherMaterialId" ColumnName="OtherMaterialId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="OtherMaterialName" ColumnName="OtherMaterialName" />
+          <ScalarProperty Name="OtherMateriaRemark" ColumnName="OtherMateriaRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_39_Metals">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_39_Metals">
+        <MappingFragment StoreEntitySet="tbl_39_Metals">
+          <ScalarProperty Name="MetalId" ColumnName="MetalId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MetalName" ColumnName="MetalName" />
+          <ScalarProperty Name="MetalRemark" ColumnName="MetalRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_40_Paints">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_40_Paints">
+        <MappingFragment StoreEntitySet="tbl_40_Paints">
+          <ScalarProperty Name="PaintId" ColumnName="PaintId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="PaintName" ColumnName="PaintName" />
+          <ScalarProperty Name="PaintRemark" ColumnName="PaintRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_5_Organization">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_5_Organization">
+        <MappingFragment StoreEntitySet="tbl_5_Organization">
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          <ScalarProperty Name="OrganizationStatus" ColumnName="OrganizationStatus" />
+          <ScalarProperty Name="OrganizationType" ColumnName="OrganizationType" />
+          <ScalarProperty Name="OrganizationDescription" ColumnName="OrganizationDescription" />
+          <ScalarProperty Name="OrganizationAdress" ColumnName="OrganizationAdress" />
+          <ScalarProperty Name="OrganizationEmail" ColumnName="OrganizationEmail" />
+          <ScalarProperty Name="OrganizationPhoneNumbe" ColumnName="OrganizationPhoneNumbe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_6_City">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_6_City">
+        <MappingFragment StoreEntitySet="tbl_6_City">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserCity" ColumnName="UserCity" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AdministrativeDevision" ColumnName="AdministrativeDevision" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_9_SpektrumLinesChE">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.tbl_9_SpektrumLinesChE">
+        <MappingFragment StoreEntitySet="tbl_9_SpektrumLinesChE">
+          <ScalarProperty Name="SpektrumLineChEId" ColumnName="SpektrumLineChEId" />
+          <ScalarProperty Name="ChemicalElementId" ColumnName="ChemicalElementId" />
+          <ScalarProperty Name="FocusSectionId" ColumnName="FocusSectionId" />
+          <ScalarProperty Name="SpektrumLineChEWavelength" ColumnName="SpektrumLineChEWavelength" />
+          <ScalarProperty Name="SpektrumLineChEIntensity" ColumnName="SpektrumLineChEIntensity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="DBArtWorkRC6Model.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="IDUserRole" ColumnName="IDUserRole" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

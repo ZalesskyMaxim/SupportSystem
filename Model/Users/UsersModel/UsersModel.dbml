@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBArtWorkRC6" Class="UsersModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=DBArtWorkRC6;Integrated Security=True" SettingsObjectName="Model.Properties.Settings" SettingsPropertyName="DBContext" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_1_User" Member="tbl_1_Users">
+    <Type Name="tbl_1_User">
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrganizationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrivilegeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserFirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserMiddleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhoneNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UserMobilePhoneNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ActivatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActivatedLink" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AvatarPath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Birthdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_1_User_UserRole" Member="UserRoles" ThisKey="IDUser" OtherKey="IDUser" Type="UserRole" />
+      <Association Name="tbl_1_User_tbl_32_FocusSection" Member="tbl_32_FocusSections" ThisKey="IDUser" OtherKey="IDUser" Type="tbl_32_FocusSection" />
+      <Association Name="tbl_3_Privilege_tbl_1_User" Member="tbl_3_Privilege" ThisKey="PrivilegeId" OtherKey="PrivilegeId" Type="tbl_3_Privilege" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_5_Organization_tbl_1_User" Member="tbl_5_Organization" ThisKey="OrganizationId" OtherKey="OrganizationId" Type="tbl_5_Organization" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_6_City_tbl_1_User" Member="tbl_6_City" ThisKey="CityId" OtherKey="CityId" Type="tbl_6_City" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="IDUserRole" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDRole" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_1_User_UserRole" Member="tbl_1_User" ThisKey="IDUser" OtherKey="IDUser" Type="tbl_1_User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_2_Role_UserRole" Member="tbl_2_Role" ThisKey="IDRole" OtherKey="IDRole" Type="tbl_2_Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_10_ChemicalElement" Member="tbl_10_ChemicalElements">
+    <Type Name="tbl_10_ChemicalElement">
+      <Column Name="ChemicalElementId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CrystalStructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChemicalElementName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ChemicalElementDescription" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="ChemicalElementAtomicNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChemicalElementAtomicWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ChemicalElementCore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChemicalElementIons" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_10_ChemicalElement_tbl_22_Spektr" Member="tbl_22_Spektrs" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_22_Spektr" />
+      <Association Name="tbl_10_ChemicalElement_tbl_23_StatesOfMatter_ChE" Member="tbl_23_StatesOfMatter_ChEs" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_23_StatesOfMatter_ChE" />
+      <Association Name="tbl_10_ChemicalElement_tbl_25_Isotop_ChE" Member="tbl_25_Isotop_ChEs" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_25_Isotop_ChE" />
+      <Association Name="tbl_10_ChemicalElement_tbl_9_SpektrumLinesChE" Member="tbl_9_SpektrumLinesChEs" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_9_SpektrumLinesChE" />
+      <Association Name="tbl_24_CrystalStructuresChE_tbl_10_ChemicalElement" Member="tbl_24_CrystalStructuresChE" ThisKey="CrystalStructureId" OtherKey="CrystalStructureId" Type="tbl_24_CrystalStructuresChE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_11_AuthorPictures" Member="tbl_11_AuthorPictures">
+    <Type Name="tbl_11_AuthorPicture">
+      <Column Name="AuthorPicturesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GeografyPlaceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HistoryPeriodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorTypeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorFirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorLastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorMiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorDate_of_birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AuthorOtherDates" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AuthorBiography" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Association Name="tbl_11_AuthorPicture_tbl_14_ArtWork" Member="tbl_14_ArtWorks" ThisKey="AuthorPicturesId" OtherKey="AuthorPicturesId" Type="tbl_14_ArtWork" />
+      <Association Name="tbl_12_GeografyPlace_tbl_11_AuthorPicture" Member="tbl_12_GeografyPlace" ThisKey="GeografyPlaceId" OtherKey="GeografyPlaceId" Type="tbl_12_GeografyPlace" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_13_HistoryPeriod_tbl_11_AuthorPicture" Member="tbl_13_HistoryPeriod" ThisKey="HistoryPeriodId" OtherKey="HistoryPeriodId" Type="tbl_13_HistoryPeriod" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_30_AuthorType_tbl_11_AuthorPicture" Member="tbl_30_AuthorType" ThisKey="AuthorTypeId" OtherKey="AuthorTypeId" Type="tbl_30_AuthorType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_12_GeografyPlace" Member="tbl_12_GeografyPlaces">
+    <Type Name="tbl_12_GeografyPlace">
+      <Column Name="GeografyPlaceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeografyPlaceCity" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Administrative_District_1" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Administrative_District_2" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Administrative_District_3" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_12_GeografyPlace_tbl_11_AuthorPicture" Member="tbl_11_AuthorPictures" ThisKey="GeografyPlaceId" OtherKey="GeografyPlaceId" Type="tbl_11_AuthorPicture" />
+      <Association Name="tbl_15_Country_tbl_12_GeografyPlace" Member="tbl_15_Country" ThisKey="CountryId" OtherKey="CountryId" Type="tbl_15_Country" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_13_HistoryPeriod" Member="tbl_13_HistoryPeriods">
+    <Type Name="tbl_13_HistoryPeriod">
+      <Column Name="HistoryPeriodId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryPeriodName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HistoryPeriodIdDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="HistoryPeriodIdDates" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tbl_13_HistoryPeriod_tbl_11_AuthorPicture" Member="tbl_11_AuthorPictures" ThisKey="HistoryPeriodId" OtherKey="HistoryPeriodId" Type="tbl_11_AuthorPicture" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_14_ArtWork" Member="tbl_14_ArtWorks">
+    <Type Name="tbl_14_ArtWork">
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuthorPicturesId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TechnicsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArtWorkName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArtWorkOriginalName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArtWorkLocation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArtWorkSize" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ArtWorkDateResearch" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtWorkAimResearch" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ArtWorkAuthor" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ArtWorkAuthor_lang" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ArtWorkConclusionNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArtWorkCreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArtWorkStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ArtWorkDescription" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_16_FotoPicture" Member="tbl_16_FotoPictures" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_16_FotoPicture" />
+      <Association Name="tbl_14_ArtWork_tbl_17_PassportResearch" Member="tbl_17_PassportResearches" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_17_PassportResearch" />
+      <Association Name="tbl_14_ArtWork_tbl_18_RemarkOfDate" Member="tbl_18_RemarkOfDates" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_18_RemarkOfDate" />
+      <Association Name="tbl_14_ArtWork_tbl_32_FocusSection" Member="tbl_32_FocusSections" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_32_FocusSection" />
+      <Association Name="tbl_14_ArtWork_tbl_35_ArtWorkGenre" Member="tbl_35_ArtWorkGenres" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_35_ArtWorkGenre" />
+      <Association Name="tbl_11_AuthorPicture_tbl_14_ArtWork" Member="tbl_11_AuthorPicture" ThisKey="AuthorPicturesId" OtherKey="AuthorPicturesId" Type="tbl_11_AuthorPicture" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_36_Technic_tbl_14_ArtWork" Member="tbl_36_Technic" ThisKey="TechnicsId" OtherKey="TechnicsId" Type="tbl_36_Technic" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_37_Material_tbl_14_ArtWork" Member="tbl_37_Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_37_Material" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_15_Country" Member="tbl_15_Countries">
+    <Type Name="tbl_15_Country">
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CountryDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_15_Country_tbl_12_GeografyPlace" Member="tbl_12_GeografyPlaces" ThisKey="CountryId" OtherKey="CountryId" Type="tbl_12_GeografyPlace" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_16_FotoPictures" Member="tbl_16_FotoPictures">
+    <Type Name="tbl_16_FotoPicture">
+      <Column Name="FotoPicturesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FotoPictures" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FotoPicturesObjects" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="FotoPicturesColors" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_16_FotoPicture" Member="tbl_14_ArtWork" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_14_ArtWork" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_17_PassportResearch" Member="tbl_17_PassportResearches">
+    <Type Name="tbl_17_PassportResearch">
+      <Column Name="PassportResearchId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstrumentalMethodsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Conclusion_the_method" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_17_PassportResearch" Member="tbl_14_ArtWork" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_14_ArtWork" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_20_InstrumentalMethod_tbl_17_PassportResearch" Member="tbl_20_InstrumentalMethod" ThisKey="InstrumentalMethodsId" OtherKey="InstrumentalMethodsId" Type="tbl_20_InstrumentalMethod" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_18_RemarkOfDate" Member="tbl_18_RemarkOfDates">
+    <Type Name="tbl_18_RemarkOfDate">
+      <Column Name="RemarkOfDateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfCreatedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RemarkOfDateCreate" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_18_RemarkOfDate" Member="tbl_14_ArtWork" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_14_ArtWork" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_19_DateOfCreated_tbl_18_RemarkOfDate" Member="tbl_19_DateOfCreated" ThisKey="DateOfCreatedId" OtherKey="DateOfCreatedId" Type="tbl_19_DateOfCreated" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_19_DateOfCreated" Member="tbl_19_DateOfCreateds">
+    <Type Name="tbl_19_DateOfCreated">
+      <Column Name="DateOfCreatedId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateOfCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tbl_19_DateOfCreated_tbl_18_RemarkOfDate" Member="tbl_18_RemarkOfDates" ThisKey="DateOfCreatedId" OtherKey="DateOfCreatedId" Type="tbl_18_RemarkOfDate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_2_Roles" Member="tbl_2_Roles">
+    <Type Name="tbl_2_Role">
+      <Column Name="IDRole" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_2_Role_UserRole" Member="UserRoles" ThisKey="IDRole" OtherKey="IDRole" Type="UserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_20_InstrumentalMethods" Member="tbl_20_InstrumentalMethods">
+    <Type Name="tbl_20_InstrumentalMethod">
+      <Column Name="InstrumentalMethodsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InstrumentalMethodsName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InstrumentalMethodsDescription" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Association Name="tbl_20_InstrumentalMethod_tbl_17_PassportResearch" Member="tbl_17_PassportResearches" ThisKey="InstrumentalMethodsId" OtherKey="InstrumentalMethodsId" Type="tbl_17_PassportResearch" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_21_SpectrumLine" Member="tbl_21_SpectrumLines">
+    <Type Name="tbl_21_SpectrumLine">
+      <Column Name="SpectrumLineId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LibraryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpectrumLineDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SpectrumLinePersonName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SpectrumLineWavelLength" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OtherOptions" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Association Name="tbl_21_SpectrumLine_tbl_22_Spektr" Member="tbl_22_Spektrs" ThisKey="SpectrumLineId" OtherKey="SpectrumLineId" Type="tbl_22_Spektr" />
+      <Association Name="tbl_34_LibrarySpectrumLine_tbl_21_SpectrumLine" Member="tbl_34_LibrarySpectrumLine" ThisKey="LibraryId" OtherKey="LibraryId" Type="tbl_34_LibrarySpectrumLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_22_Spektr" Member="tbl_22_Spektrs">
+    <Type Name="tbl_22_Spektr">
+      <Column Name="SpektrId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SpectrumLineId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChemicalElementId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FocusSectionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpektrWaveLenght" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LineDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SpektrsBase" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SpektrIntensity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PeakArea" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="tbl_21_SpectrumLine_tbl_22_Spektr" Member="tbl_21_SpectrumLine" ThisKey="SpectrumLineId" OtherKey="SpectrumLineId" Type="tbl_21_SpectrumLine" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_10_ChemicalElement_tbl_22_Spektr" Member="tbl_10_ChemicalElement" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_10_ChemicalElement" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_32_FocusSection_tbl_22_Spektr" Member="tbl_32_FocusSection" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_32_FocusSection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_37_Material_tbl_22_Spektr" Member="tbl_37_Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_37_Material" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_23_StatesOfMatter_ChE" Member="tbl_23_StatesOfMatter_ChEs">
+    <Type Name="tbl_23_StatesOfMatter_ChE">
+      <Column Name="StatesOfMatterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChemicalElementId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatesOfMatterIdDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_10_ChemicalElement_tbl_23_StatesOfMatter_ChE" Member="tbl_10_ChemicalElement" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_10_ChemicalElement" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_24_CrystalStructuresChE" Member="tbl_24_CrystalStructuresChEs">
+    <Type Name="tbl_24_CrystalStructuresChE">
+      <Column Name="CrystalStructureId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CrystalStructureDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_24_CrystalStructuresChE_tbl_10_ChemicalElement" Member="tbl_10_ChemicalElements" ThisKey="CrystalStructureId" OtherKey="CrystalStructureId" Type="tbl_10_ChemicalElement" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_25_Isotop_ChE" Member="tbl_25_Isotop_ChEs">
+    <Type Name="tbl_25_Isotop_ChE">
+      <Column Name="IsotopId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChemicalElementId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsotopMassValue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_10_ChemicalElement_tbl_25_Isotop_ChE" Member="tbl_10_ChemicalElement" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_10_ChemicalElement" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_26_Pigments" Member="tbl_26_Pigments">
+    <Type Name="tbl_26_Pigment">
+      <Column Name="PigmentsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PaintId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PigmentColor" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PigmentChemicalFormula" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PigmentYearUsed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PigmentWhereUsed" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PigmentLiterature" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="tbl_27_Group_tbl_26_Pigment" Member="tbl_27_Group" ThisKey="GroupId" OtherKey="GroupId" Type="tbl_27_Group" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_40_Paint_tbl_26_Pigment" Member="tbl_40_Paint" ThisKey="PaintId" OtherKey="PaintId" Type="tbl_40_Paint" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_27_Group" Member="tbl_27_Groups">
+    <Type Name="tbl_27_Group">
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_27_Group_tbl_26_Pigment" Member="tbl_26_Pigments" ThisKey="GroupId" OtherKey="GroupId" Type="tbl_26_Pigment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_3_Privileges" Member="tbl_3_Privileges">
+    <Type Name="tbl_3_Privilege">
+      <Column Name="PrivilegeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Privilege" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrivilegeDescription" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="tbl_3_Privilege_tbl_1_User" Member="tbl_1_Users" ThisKey="PrivilegeId" OtherKey="PrivilegeId" Type="tbl_1_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_30_AuthorType" Member="tbl_30_AuthorTypes">
+    <Type Name="tbl_30_AuthorType">
+      <Column Name="AuthorTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuthorTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorSubTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorParentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_30_AuthorType_tbl_11_AuthorPicture" Member="tbl_11_AuthorPictures" ThisKey="AuthorTypeId" OtherKey="AuthorTypeId" Type="tbl_11_AuthorPicture" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_32_FocusSection" Member="tbl_32_FocusSections">
+    <Type Name="tbl_32_FocusSection">
+      <Column Name="FocusSectionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FocusSectionName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FocusSectionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FocusSectionTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FocusSectionSpektrFile" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FocusSectionReportFile" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LabelFocus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_32_FocusSection_tbl_22_Spektr" Member="tbl_22_Spektrs" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_22_Spektr" />
+      <Association Name="tbl_32_FocusSection_tbl_33_ObjectsPhoto" Member="tbl_33_ObjectsPhotos" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_33_ObjectsPhoto" />
+      <Association Name="tbl_32_FocusSection_tbl_34_Peak" Member="tbl_34_Peaks" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_34_Peak" />
+      <Association Name="tbl_32_FocusSection_tbl_9_SpektrumLinesChE" Member="tbl_9_SpektrumLinesChEs" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_9_SpektrumLinesChE" />
+      <Association Name="tbl_1_User_tbl_32_FocusSection" Member="tbl_1_User" ThisKey="IDUser" OtherKey="IDUser" Type="tbl_1_User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_32_FocusSection" Member="tbl_14_ArtWork" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_14_ArtWork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_33_ObjectsPhoto" Member="tbl_33_ObjectsPhotos">
+    <Type Name="tbl_33_ObjectsPhoto">
+      <Column Name="ObjectsPhotoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FocusSectionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectsPhotoFile" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ObjectsPhotoDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tbl_32_FocusSection_tbl_33_ObjectsPhoto" Member="tbl_32_FocusSection" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_32_FocusSection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_34_LibrarySpectrumLines" Member="tbl_34_LibrarySpectrumLines">
+    <Type Name="tbl_34_LibrarySpectrumLine">
+      <Column Name="LibraryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LibraryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LibraryCooment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="tbl_34_LibrarySpectrumLine_tbl_21_SpectrumLine" Member="tbl_21_SpectrumLines" ThisKey="LibraryId" OtherKey="LibraryId" Type="tbl_21_SpectrumLine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_34_Peak" Member="tbl_34_Peaks">
+    <Type Name="tbl_34_Peak">
+      <Column Name="PeakId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FocusSectionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WaveLenghtPeak" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IntensityPeak" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_32_FocusSection_tbl_34_Peak" Member="tbl_32_FocusSection" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_32_FocusSection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_35_ArtWorkGenre" Member="tbl_35_ArtWorkGenres">
+    <Type Name="tbl_35_ArtWorkGenre">
+      <Column Name="ArtWorkGenreId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArtWorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArtWorkGenreName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArtWorkGenreDescription" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Association Name="tbl_14_ArtWork_tbl_35_ArtWorkGenre" Member="tbl_14_ArtWork" ThisKey="ArtWorkId" OtherKey="ArtWorkId" Type="tbl_14_ArtWork" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_36_Technics" Member="tbl_36_Technics">
+    <Type Name="tbl_36_Technic">
+      <Column Name="TechnicsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TechnicsName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TechnicsRemark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_36_Technic_tbl_14_ArtWork" Member="tbl_14_ArtWorks" ThisKey="TechnicsId" OtherKey="TechnicsId" Type="tbl_14_ArtWork" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_37_Material" Member="tbl_37_Materials">
+    <Type Name="tbl_37_Material">
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaterialName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_37_Material_tbl_14_ArtWork" Member="tbl_14_ArtWorks" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_14_ArtWork" />
+      <Association Name="tbl_37_Material_tbl_22_Spektr" Member="tbl_22_Spektrs" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_22_Spektr" />
+      <Association Name="tbl_37_Material_tbl_38_OtherMaterial" Member="tbl_38_OtherMaterials" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_38_OtherMaterial" />
+      <Association Name="tbl_37_Material_tbl_39_Metal" Member="tbl_39_Metals" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_39_Metal" />
+      <Association Name="tbl_37_Material_tbl_40_Paint" Member="tbl_40_Paints" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_40_Paint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_38_OtherMaterials" Member="tbl_38_OtherMaterials">
+    <Type Name="tbl_38_OtherMaterial">
+      <Column Name="OtherMaterialId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OtherMaterialName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OtherMateriaRemark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_37_Material_tbl_38_OtherMaterial" Member="tbl_37_Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_37_Material" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_39_Metals" Member="tbl_39_Metals">
+    <Type Name="tbl_39_Metal">
+      <Column Name="MetalId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MetalName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MetalRemark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_37_Material_tbl_39_Metal" Member="tbl_37_Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_37_Material" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_40_Paints" Member="tbl_40_Paints">
+    <Type Name="tbl_40_Paint">
+      <Column Name="PaintId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaintName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PaintRemark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_40_Paint_tbl_26_Pigment" Member="tbl_26_Pigments" ThisKey="PaintId" OtherKey="PaintId" Type="tbl_26_Pigment" />
+      <Association Name="tbl_37_Material_tbl_40_Paint" Member="tbl_37_Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="tbl_37_Material" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_5_Organization" Member="tbl_5_Organizations">
+    <Type Name="tbl_5_Organization">
+      <Column Name="OrganizationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrganizationStatus" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrganizationType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrganizationDescription" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="OrganizationAdress" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OrganizationEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrganizationPhoneNumbe" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tbl_5_Organization_tbl_1_User" Member="tbl_1_Users" ThisKey="OrganizationId" OtherKey="OrganizationId" Type="tbl_1_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_6_City" Member="tbl_6_Cities">
+    <Type Name="tbl_6_City">
+      <Column Name="CityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCity" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdministrativeDevision" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_6_City_tbl_1_User" Member="tbl_1_Users" ThisKey="CityId" OtherKey="CityId" Type="tbl_1_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_9_SpektrumLinesChE" Member="tbl_9_SpektrumLinesChEs">
+    <Type Name="tbl_9_SpektrumLinesChE">
+      <Column Name="SpektrumLineChEId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChemicalElementId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FocusSectionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpektrumLineChEWavelength" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SpektrumLineChEIntensity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="tbl_32_FocusSection_tbl_9_SpektrumLinesChE" Member="tbl_32_FocusSection" ThisKey="FocusSectionId" OtherKey="FocusSectionId" Type="tbl_32_FocusSection" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tbl_10_ChemicalElement_tbl_9_SpektrumLinesChE" Member="tbl_10_ChemicalElement" ThisKey="ChemicalElementId" OtherKey="ChemicalElementId" Type="tbl_10_ChemicalElement" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

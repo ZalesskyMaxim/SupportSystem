@@ -1,0 +1,14 @@
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Model.dll.config
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Model.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Model.pdb
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\EntityFramework.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\EntityFramework.xml
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\obj\Debug\Model.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\obj\Debug\Model.pdb
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Ninject.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Ninject.xml
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\AutoMapper.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\AutoMapper.xml
