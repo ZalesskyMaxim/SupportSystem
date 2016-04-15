@@ -22,6 +22,12 @@ namespace Model.Users.UsersModel
             if (instance.IDUser == 0)
             {
                 instance.AddedDate = DateTime.Now;
+                ///TODO Refctor this code!!!!!!!!
+                #region hardcode CityId, PrivilegeId, OrganizationId.
+                instance.CityId = 1;
+                instance.PrivilegeId = 1;
+                instance.OrganizationId = 1;
+                #endregion
                 instance.ActivatedLink = tbl_1_User.GetActivateUrl();
                 Db.tbl_1_Users.InsertOnSubmit(instance);
                 Db.tbl_1_Users.Context.SubmitChanges();

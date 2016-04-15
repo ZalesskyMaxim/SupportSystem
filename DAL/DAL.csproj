@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,8 +46,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\ArtWork.cs" />
+    <Compile Include="Models\ArtWorkGenre.cs" />
+    <Compile Include="Models\AuthorPictures.cs" />
+    <Compile Include="Models\AuthorType.cs" />
+    <Compile Include="Models\ChemicalElement.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\CrystalStructuresChE.cs" />
+    <Compile Include="Models\DateOfCreated.cs" />
+    <Compile Include="Models\FocusSection.cs" />
+    <Compile Include="Models\FotoPictures.cs" />
+    <Compile Include="Models\GeografyPlace.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\HistoryPeriod.cs" />
+    <Compile Include="Models\InstrumentalMethods.cs" />
+    <Compile Include="Models\IsotopChE.cs" />
+    <Compile Include="Models\LibrarySpectrumLines.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Metals.cs" />
+    <Compile Include="Models\ObjectsPhoto.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\OtherMaterials.cs" />
+    <Compile Include="Models\Paints.cs" />
+    <Compile Include="Models\PassportResearch.cs" />
+    <Compile Include="Models\Peak.cs" />
+    <Compile Include="Models\Pigments.cs" />
+    <Compile Include="Models\Privileges.cs" />
+    <Compile Include="Models\RemarkOfDate.cs" />
+    <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\SpectrumLine.cs" />
+    <Compile Include="Models\Spektr.cs" />
+    <Compile Include="Models\SpektrumLinesChE.cs" />
+    <Compile Include="Models\StatesOfMatterChE.cs" />
+    <Compile Include="Models\Technics.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AbstractRepository.cs" />
+    <Compile Include="Repository\IModelRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{dc39ad8a-326b-4e91-a26e-879be8395a33}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

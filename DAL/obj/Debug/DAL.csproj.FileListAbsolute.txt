@@ -3,3 +3,12 @@ E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\DAL.
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\obj\Debug\DAL.dll
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\obj\Debug\DAL.pdb
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\DAL.dll.config
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Model.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Ninject.dll
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Model.pdb
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.xml
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Ninject.xml
