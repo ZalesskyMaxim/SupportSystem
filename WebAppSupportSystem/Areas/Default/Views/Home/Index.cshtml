@@ -1,9 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Oeuvre";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+@*<h2>Index</h2>
 <p>
     <div class="menu">
         <a href="@Url.Action("Index", "Role")">Роли</a>
@@ -12,4 +11,67 @@
         <a href="/admin">Adminka</a>
     </div>
 
-</p>
+</p>*@
+
+
+
+<div class="cd-main-content">
+     <!--=== Home Section Ends ===-->
+    @Html.Partial("homeSection")
+    <!--=== Home Section Ends ===-->
+
+    <!--=== Artists section Starts ===-->
+   @*@Html.Partial("artistsSection")*@ 
+    <!--=== Artists section Ends ===-->
+
+    <!--=== Library section Starts ===-->
+    @Html.Partial("librarySection")
+    <!--=== Library section Ends ===-->
+
+    <!--=== Study-1 section Starts ===-->
+    @Html.Partial("studySection")
+    <!--=== Study-2 section Ends ===-->
+
+    <!--=== About section Starts ===-->
+    @Html.Partial("aboutSection")
+    <!--=== About section Ends ===-->
+
+    <!--=== ScreenShots section Starts ===-->
+    @Html.Partial("screenShotsSection")
+    <!--=== ScreenShots section Ends ===-->
+
+    <!--=== Pigments and colors section Starts ===-->
+    @Html.Partial("pigments_colorSection")
+    <!--=== Pigments and colors section Ends ===-->
+
+    <!--=== Subscribe section Starts ===-->
+    @Html.Partial("subscribeSection")
+    <!--=== Subscribe section Ends ===-->
+
+    <!--=== Contact section Starts ===-->
+    @Html.Partial("contactSection")
+    <!--=== Contact section Ends ===-->
+
+
+</div>
+
+
+
+<div class="md-modal md-effect-13" id="modal-13">
+    <div class="md-content">
+        <h3>О проекте</h3>
+        <div>
+            После аутентификации на портале Вам будет предоставлен доступ к материалами связанными с исследованием объектов искусства и доступ к ресурсам связанными с исследованием строительных материалов.
+            <br>На страницах сайта вы можете найти информацию о лазерных спектрах, пигментах и их химическом составе, информацию о картинах (фотографии и описание картин), информацию о художниках.
+            <br>А также можете посмотреть результаты экспертизы конкретного объекта исследования
+            <div class="home-buttons">
+                <button class="fancy-button button-line button-white vertical md-close" data-modal="modal-13">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

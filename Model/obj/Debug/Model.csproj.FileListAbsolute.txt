@@ -12,3 +12,17 @@ E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Ni
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\Ninject.xml
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\AutoMapper.dll
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\Model\bin\Debug\AutoMapper.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\Model.dll.config
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\Model.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\Model.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\AutoMapper.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\EntityFramework.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\Ninject.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\AutoMapper.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\EntityFramework.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\bin\Debug\Ninject.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\obj\Debug\Model.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\Model\obj\Debug\Model.pdb

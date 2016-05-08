@@ -1,25 +1,27 @@
-﻿@model IList<Model.Users.UsersModel.tbl_1_User>
+﻿@*
+        @model IList<Model.Users.UsersModel.tbl_1_User>
 
-@{
-    ViewBag.Title = "Users";
-    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Users</h2>
-
-<p>
-    @foreach (var user in Model)
-    {
-        <div class="item">
-            <span class="id">
-                @user.IDUser
-            </span>
-            <span class="email">
-                @user.Email
-            </span>
-            <span class="activateDate">
-                @user.AddedDate
-            </span>
-        </div>
+    @{
+        ViewBag.Title = "Users";
+        Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
     }
-</p>
+
+    <h2>Users</h2>
+
+    <p>
+        @foreach (var user in Model)
+        {
+            <div class="item">
+                <span class="id">
+                    @user.IDUser
+                </span>
+                <span class="email">
+                    @user.Email
+                </span>
+                <span class="activateDate">
+                    @user.AddedDate
+                </span>
+            </div>
+        }
+    </p>
+*@

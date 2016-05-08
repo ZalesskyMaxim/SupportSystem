@@ -1,0 +1,27 @@
+﻿@{
+    string url = string.Empty;
+    if (Request.Url != null)
+    {
+        url = Request.Url.ToString();
+    }
+    string selected = string.Empty;
+}
+
+<h3>Ссыdsdлки</h3>
+<ul>
+    @{selected = "Домашняя страница".Equals(ViewBag.Title) ? "selected" : string.Empty;}
+    <li><a class="@selected" href="@Url.Action("Index", "Home")">Домашняя страница</a></li>
+
+    @{selected = "Художники".Equals(ViewBag.Title) ? "selected" : string.Empty;}
+    <li><a class="@selected" href="@Url.Action("ListPainter", "AuthorPainter")">Художники</a></li>
+
+    @{selected = "Галерея картин".Equals(ViewBag.Title) ? "selected" : string.Empty;}
+    <li><a class="@selected" href="@Url.Action("Items", "SideMenu")">Галерея картин</a></li>
+
+    @{selected = "Пигменты".Equals(ViewBag.Title) ? "selected" : string.Empty;}
+    <li><a class="@selected" href="@Url.Action("Index", "Pigments")">Пигменты</a></li>
+
+    @{selected = "Вход".Equals(ViewBag.Title) ? "selected" : string.Empty;}
+    <li><a class="@selected" href="@Url.Action("Index", "Login")">login</a></li>
+
+</ul>

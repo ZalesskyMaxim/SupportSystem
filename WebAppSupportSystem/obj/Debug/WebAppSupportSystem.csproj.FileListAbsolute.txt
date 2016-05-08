@@ -47,3 +47,46 @@ E:\Ucheba\Проект\.NET Project\Application\SupportSystem\WebAppSupportSyste
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\WebAppSupportSystem\bin\Ninject.xml
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Common.xml
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Mvc.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\WebAppSupportSystem.dll.config
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\WebAppSupportSystem.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\WebAppSupportSystem.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Antlr3.Runtime.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\AutoMapper.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\DAL.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\EntityFramework.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\EntityFramework.SqlServer.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Model.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Newtonsoft.Json.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Common.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Mvc.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\NLog.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Mvc.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Optimization.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Providers.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Razor.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.Deployment.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.Razor.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\WebActivatorEx.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\WebGrease.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\DAL.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Model.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\AutoMapper.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\EntityFramework.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\EntityFramework.SqlServer.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Common.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Ninject.Web.Mvc.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\NLog.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\Newtonsoft.Json.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Mvc.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.Razor.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.Deployment.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\bin\System.Web.WebPages.Razor.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\obj\Debug\WebAppSupportSystem.csprojResolveAssemblyReference.cache
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\obj\Debug\WebAppSupportSystem.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\WebAppSupportSystem\obj\Debug\WebAppSupportSystem.pdb

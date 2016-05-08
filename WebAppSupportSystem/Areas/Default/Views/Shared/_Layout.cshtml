@@ -1,9 +1,19 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <!-- Basic Page Needs
+     ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+     ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>@ViewBag.Title</title>
+
     @Styles.Render("~/Content/themes/base/css", "~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -11,20 +21,106 @@
 
     <link rel="stylesheet" href="~/Content/themes/base/jquery-ui.css">
     @RenderSection("scripts", required: false)
+
+    <!-- Mobile Specific Metas
+     ================================================== -->
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <!-- Bootstrap CSS
+    ================================================== -->
+    <link href="~/Content/Style/bootstrap.css" rel="stylesheet" />
+
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Content/Style/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/Style/linea-icon.css" />
+    <link rel="stylesheet" href="~/Content/Style/fancy-buttons.css" />
+
+    <link rel="stylesheet" href="~/Content/Style/style.css">
+    <link rel="stylesheet" href="~/Content/Style/style2.css" />
+    <link rel="stylesheet" href="~/Content/Style/responsive.css" />
+    <link rel="stylesheet" href="~/Content/Style/login.css" />
+    <!--=== Color Scheme===-->
+    <link rel="stylesheet" id="scheme-source" href="~/Content/Style/schemes/orange.css" />
+
 </head>
 <body>
+    <!--=== header section Starts ===-->
+        @Html.Partial("~/Areas/Default/Views/Shared/_header.cshtml")
+    <!--=== header section Ends ===-->
+
+    <!-- BEGIN # MODAL LOGIN -->
+        @Html.Partial("~/Areas/Default/Views/MyModalLogin/Index.cshtml")
+    <!-- END # MODAL LOGIN -->
+
+    <!-- My body content Starts -->
+        @RenderBody()
+    <!-- My body content Ends -->
+
+    <!--=== Footer section Starts ===--> 
+        @Html.Partial("~/Areas/Default/Views/Shared/_footer.cshtml") 
+    <!--=== Footer section Ends ===-->
+    
+    <!-- Scroll to Top Starts -->
+         <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+    <!--=== Scroll to Top Ends ===-->
+
+
+
+     @*
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav nav-pills pull-right">
-                    @Html.Action("UserLogin", "Home")
+                   @Html.Action("UserLogin", "Home")
                 </ul>
             </div>
         </div>
     </div>
+    *@ 
+    
+    <!--==== Js files ====-->
+    <!--==== Essential files ====-->
+    <script type="text/javascript" src="~/Scripts/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/modernizr.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.easing.1.3.js"></script>
 
-    @RenderBody()
+    <!--==== Slider and Card style plugin ====-->
+    <script type="text/javascript" src="~/Scripts/js/jquery.baraja.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.vegas.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.bxslider.min.js"></script>
 
+    <!--==== MailChimp Widget plugin ====-->
+    <script type="text/javascript" src="~/Scripts/js/jquery.ajaxchimp.min.js"></script>
+
+    <!--==== Scroll and navigation plugins ====-->
+    <script type="text/javascript" src="~/Scripts/js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.nav.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.fitvids.js"></script>
+
+    
+
+    <!--==== login Script files ====-->
+    <script type="text/javascript" src="~/Scripts/js/login.js"></script>
+
+    <!--==== Modal About Script files ====-->
+    <script src="~/Scripts/js/classie.js"></script>
+    <script src="~/Scripts/js/modalEffects.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/js/animate.js"></script>
+
+    <!--==== Custom Script files ====-->
+    <script type="text/javascript" src="~/Scripts/js/custom.js"></script>
+
+    <script src="~/Scripts/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="~/Scripts/js/main.js"></script> <!-- Resource jQuery -->
 
 </body>
 </html>

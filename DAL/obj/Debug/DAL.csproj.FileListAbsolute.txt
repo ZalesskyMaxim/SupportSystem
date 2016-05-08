@@ -12,3 +12,17 @@ E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Mode
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.xml
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\Ucheba\Проект\.NET Project\Application\SupportSystem\DAL\bin\Debug\Ninject.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\DAL.dll.config
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\DAL.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\DAL.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\EntityFramework.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\Model.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\Ninject.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\Model.pdb
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\EntityFramework.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\bin\Debug\Ninject.xml
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\obj\Debug\DAL.dll
+D:\SSD\SkyDrive\Диплом\Oeuvre\SupportSystem\DAL\obj\Debug\DAL.pdb

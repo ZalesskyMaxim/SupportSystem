@@ -5,13 +5,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Страница не найдена</title>
+    <link rel="stylesheet" href="~/Content/Style/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/Style/error.css" />
 </head>
 <body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+    <!--=== section Starts ===-->
+    <section>
+        <div class="row">
+            <div class="col-lg-12 wrap">
+                <div class="logo">
+                    <h1>404</h1>
+                    <p> Упс... Страница не найдена!</p>
+                    <div class="sub">
+                        <p><a href="@Url.Action("Index", "Home")"> Bернуться на главную...</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--=== section Ends ===-->
 </body>
 </html>
